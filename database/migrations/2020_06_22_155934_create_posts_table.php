@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->boolean('approved')->default(0);
             $table->timestamp('published_at')->nullable();
             $table->unsignedBigInteger('reg_user_id');
-            $table->foreign('reg_user_id')->references('id')->on('categories');
+            $table->foreign('reg_user_id')->references('id')->on('reg_users');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();

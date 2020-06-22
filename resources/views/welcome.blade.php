@@ -205,152 +205,40 @@
                             style="position: relative; top: 0px; left: 0px;" dir="ltr">
                             <div class="slick-list draggable" style="height: 666px;">
                               <div class="slick-track"
-                                style="opacity: 1; height: 666px; transform: translate3d(0px, 0px, 0px);">
-                                <div class="single-post clearfix slick-slide slick-current slick-active"
-                                  data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/72e0d247-c24e-4b69-a937-ad7d0b092983.jpg"
-                                          alt="S&amp;P long rally highlights inverse relation with dollar"
-                                          title="S&amp;P long rally highlights inverse relation with dollar"
-                                          class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
+                                style="opacity: 1; height: 666px; transform: translate3d(0px, 0px, 0px);"> 
+                                @foreach($posts as $post)
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="{{$loop->index+1}}"
+                                    aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img src="images/{{$post->thumbnail}}"
+                                            alt="Asian stocks retreat amid corona resurgence concerns"
+                                            title="Asian stocks retreat amid corona resurgence concerns"
+                                            class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
 
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>2 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/FX_Graph/US-stocks-benchmark-long-rally-highlights-inverse-relation-with-dollar"
-                                          tabindex="0">S&amp;P long rally highlights inverse relation with dollar</a>
-                                      </h2>
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>3 days ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/Fundamental_Comment/Asian-stocks-retreat-amid-corona-resurgence-concerns"
+                                            tabindex="0">{{$post->title}}</a></h2>
+                                      </div>
                                     </div>
-
                                   </div>
-
-                                </div>
-                                <div class="single-post clearfix slick-slide slick-active" data-slick-index="1"
-                                  aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/55c90d1b-049c-4725-9ca9-00863df6a7e9.jpg"
-                                          alt="UK retail sales rebound, cost of lockdown grows"
-                                          title="UK retail sales rebound, cost of lockdown grows"
-                                          class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
-
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>2 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/Forex_News/UK-retail-sales-rebound-but-cost-of-lockdown-grows"
-                                          tabindex="0">UK retail sales rebound, cost of lockdown grows</a></h2>
-                                    </div>
-
-                                  </div>
-
-                                </div>
-                                <div class="single-post clearfix slick-slide slick-active" data-slick-index="2"
-                                  aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/0ae6f06e-9a86-4081-a70b-ad5495d1ddc6.jpeg"
-                                          alt="Daily Technical analysis for June 19, 2020"
-                                          title="Daily Technical analysis for June 19, 2020" class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
-
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>2 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/Technical_Analysis/Daily-Technical-analysis-for-June-19"
-                                          tabindex="0">Daily Technical analysis for June 19, 2020</a></h2>
-                                    </div>
-
-                                  </div>
-
-                                </div>
-                                <div class="single-post clearfix slick-slide slick-active" data-slick-index="3"
-                                  aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/02646e4e-7d69-44aa-be7b-c46a8b8e0f7a.jpg"
-                                          alt="BOE expands QE by 100bn to reinvigorate economy"
-                                          title="BOE expands QE by 100bn to reinvigorate economy"
-                                          class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
-
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>3 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/Fundamental_Comment/BOE-expands-QE-by-100bn-to-reinvigorate-economy"
-                                          tabindex="0">BOE expands QE by 100bn to reinvigorate economy</a></h2>
-                                    </div>
-
-                                  </div>
-
-                                </div>
-                                <div class="single-post clearfix slick-slide slick-active" data-slick-index="4"
-                                  aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/c0c25e43-0a8a-4c97-a9d4-6dc9c1493705.jpg"
-                                          alt="SNB holds interest rate, reiterates readiness to intervene in FX market"
-                                          title="SNB holds interest rate, reiterates readiness to intervene in FX market"
-                                          class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
-
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>3 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/Forex_News/SNB-holds-interest-rate-and-reiterates-readiness-to-intervene-in-FX-market"
-                                          tabindex="0">SNB holds interest rate, reiterates readiness to intervene in FX
-                                          market</a></h2>
-                                    </div>
-
-                                  </div>
-
-                                </div>
-                                <div class="single-post clearfix slick-slide slick-active" data-slick-index="5"
-                                  aria-hidden="false" tabindex="0" style="width: 356px;">
-                                  <div class="slider-nav-inner-wrapper">
-                                    <div class="post-thumb">
-                                      <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                        <img src="images/dfcd8c9f-c97a-4c57-862d-a2e8e24fca0a.jpg"
-                                          alt="Asian stocks retreat amid corona resurgence concerns"
-                                          title="Asian stocks retreat amid corona resurgence concerns"
-                                          class="mCS_img_loaded">
-                                        <div class="image-overlay"></div>
-                                      </a>
-                                    </div>
-
-                                    <div class="post-caption-wrapper">
-                                      <span class="posted-on"><i class="far fa-clock"></i>3 days ago</span>
-                                      <h2 class="large-font"><a
-                                          href="https://www.ofeed.com/Fundamental_Comment/Asian-stocks-retreat-amid-corona-resurgence-concerns"
-                                          tabindex="0">Asian stocks retreat amid corona resurgence concerns</a></h2>
-                                    </div>
-
-                                  </div>
-                                </div>
+                                @endforeach
                               </div>
                             </div>
+
                           </div>
+                        
                         </div>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
