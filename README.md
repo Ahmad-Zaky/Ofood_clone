@@ -1,6 +1,12 @@
 # Ofood clone
 Ofood clone site
+# Quiq Start: (Not Completed!)
 
+1. Clone the project.
+
+2. install the Laravel Dashboard from [Material Dashboard](https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html?_ga=2.205879507.171401813.1592739429-368164241.1592739429).
+
+[1]
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
