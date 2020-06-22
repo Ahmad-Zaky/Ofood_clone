@@ -25,6 +25,9 @@
   <script type="text/javascript" id="www-widgetapi-script" src="js/www-widgetapi.js" async=""></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- My Jquery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- ./My Jquery CDN -->
   <link rel="dns-prefetch" href="https://ajax.googleapis.com/">
   <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
