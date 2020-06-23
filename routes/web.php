@@ -12,13 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// User Side routes
+Route::get('/', 'PostController@index');
 
-Route::get('/', function () {
-    return view('welcome', [
-			'posts' => App\Post::where('approved', 1)->latest()->get()
-		]);
-});
-
+// Admin Panel (Dashboard) routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

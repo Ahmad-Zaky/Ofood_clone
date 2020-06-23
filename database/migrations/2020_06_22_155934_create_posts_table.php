@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('thumbnail')->nullable();
             $table->integer('likes_count')->unsigned();
+            $table->integer('views_count')->unsigned();
             $table->boolean('approved')->default(0);
             $table->timestamp('published_at')->nullable();
             $table->unsignedBigInteger('reg_user_id');

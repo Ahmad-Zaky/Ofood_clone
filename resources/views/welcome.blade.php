@@ -36,11 +36,12 @@
                     <div class="slick-wrap sl-before-load slick-initialized slick-slider">
                       <div class="slick-list draggable">
                         <div class="slick-track" style="opacity: 1; width: 7020px;">
+                          <!-- Print the last Article here -->
                           <div class="single-post clearfix slick-slide slick-current slick-active" data-slick-index="0"
                             aria-hidden="false" tabindex="0"
                             style="width: 1170px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                             <div class="post-thumb">
-                              <img src="images/72e0d247-c24e-4b69-a937-ad7d0b092983.jpg"
+                              <img src="images/{{$posts[0]['thumbnail']}}"
                                 alt="S&amp;P long rally highlights inverse relation with dollar"
                                 title="S&amp;P long rally highlights inverse relation with dollar">
                               <div class="image-overlay"></div>
@@ -49,7 +50,7 @@
                             <div class="post-content-wrapper clearfix">
                               <span class="cat-links">
                                 <a href="https://www.ofeed.com/Catnew?Catagory=FG" class="cat-53" rel="category tag"
-                                  tabindex="0">FX Graph</a></span>
+                                  tabindex="0">$posts[0]['</a></span>
                               <div class="post-meta clearfix">
                                 <span class="posted-on"><i class="far fa-clock"></i>2 days ago</span>
                                 <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
@@ -62,6 +63,7 @@
                               </h3>
                             </div>
                           </div>
+                          <!-- ./Print the last Article here -->
                           <div class="single-post clearfix slick-slide" data-slick-index="1" aria-hidden="true"
                             tabindex="-1"
                             style="width: 1170px; position: relative; left: -1170px; top: 0px; z-index: 998; opacity: 0;">
@@ -206,6 +208,8 @@
                             <div class="slick-list draggable" style="height: 666px;">
                               <div class="slick-track"
                                 style="opacity: 1; height: 666px; transform: translate3d(0px, 0px, 0px);"> 
+                                
+                                
                                 @foreach($posts as $post)
                                   <div class="single-post clearfix slick-slide slick-active" data-slick-index="{{$loop->index+1}}"
                                     aria-hidden="false" tabindex="0" style="width: 356px;">
@@ -229,16 +233,16 @@
                                     </div>
                                   </div>
                                 @endforeach
+
+
+
                               </div>
                             </div>
-
                           </div>
-                        
                         </div>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
