@@ -1,4 +1,5 @@
 @extends('front-layout.layout')
+
 @section('content')
 <div id="content" class="site-content">
       <div class="vmagazine-home-wrapp">
@@ -14,42 +15,34 @@
                       <div class="slick-wrap sl-before-load slick-initialized slick-slider">
                         <div class="slick-list draggable">
                           <div class="slick-track" style="opacity: 1; width: 7020px;">
-                            
-                            
-                            
-                            <!-- Print the last Article here -->
                             <div class="single-post clearfix slick-slide slick-current slick-active"
                               data-slick-index="0" aria-hidden="false" tabindex="0"
                               style="width: 1170px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                               <div class="post-thumb">
                                 <img
-                                  src="images/{{$posts[0]['thumbnail']}}"
-                                  alt="{{$posts[0]['title']}}"
-                                  title="{{$posts[0]['title']}}">
+                                  src="images/940d914c-5e88-4781-bece-d78fe72f142e.jpg"
+                                  alt="شركة الدريس للخدمات البترولية والنقليات " الدريس""=""
+                                  title="شركة الدريس للخدمات البترولية والنقليات ">
                                 <div class="image-overlay"></div>
                               </div>
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
                                   <a href="https://www.ofeed.com/Catnew?Catagory=SS" class="cat-53" rel="category tag"
-                                    tabindex="0">{{$posts[0]['category']['name']}}</a></span>
+                                    tabindex="0">السوق السعودي</a></span>
                                 <div class="post-meta clearfix">
-                                  <span class="posted-on"><i class="far fa-clock"></i>{{$posts[0]['readableCreatedAt']}}</span>
-                                  <span class="comments"><i class="far fa-thumbs-up"></i>{{$posts[0]['likes_count']}}</span>
-                                  <span class="post-view"><i class="fa fa-eye"></i>{{$posts[0]['views_count']}}</span>
+                                  <span class="posted-on"><i class="far fa-clock"></i>2 hours ago</span>
+                                  <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
+                                  <span class="post-view"><i class="fa fa-eye"></i>24</span>
                                 </div>
 
                                 <h3 class="extra-large-font">
                                   <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A/%D8%A7%D9%84%D8%AF%D8%B1%D9%8A%D8%B3-%D9%8A%D8%AD%D9%82%D9%82-%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%88%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%A7%D9%86-%D9%86%D9%86%D8%B5%D8%AD-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D9%8A-"
-                                    tabindex="0">{{$posts[0]['title']}}
+                                    tabindex="0">الدريس يحقق مستهدفنا الأول ويقترب من المستهدف الثاني والان ننصح بالاتي
                                   </a>
                                 </h3>
                               </div>
                             </div>
-                          <!-- ./Print the last Article here -->
-
-
-
                             <div class="single-post clearfix slick-slide" data-slick-index="1" aria-hidden="true"
                               tabindex="-1"
                               style="width: 1170px; position: relative; left: -1170px; top: 0px; z-index: 998; opacity: 0;">
@@ -65,7 +58,7 @@
                                   <a href="https://www.ofeed.com/Catnew?Catagory=FG" class="cat-53" rel="category tag"
                                     tabindex="-1">جراف العملات</a></span>
                                 <div class="post-meta clearfix">
-                                  <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
+                                  <span class="posted-on"><i class="far fa-clock"></i>3 hours ago</span>
                                   <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
                                   <span class="post-view"><i class="fa fa-eye"></i>39</span>
                                 </div>
@@ -91,7 +84,7 @@
                                   <a href="https://www.ofeed.com/Catnew?Catagory=FC" class="cat-53" rel="category tag"
                                     tabindex="-1">التحليل الأساسي</a></span>
                                 <div class="post-meta clearfix">
-                                  <span class="posted-on"><i class="far fa-clock"></i>5 hours ago</span>
+                                  <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
                                   <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
                                   <span class="post-view"><i class="fa fa-eye"></i>36</span>
                                 </div>
@@ -117,7 +110,7 @@
                                   <a href="https://www.ofeed.com/Catnew?Catagory=CC" class="cat-53" rel="category tag"
                                     tabindex="-1">العملات الرقمية</a></span>
                                 <div class="post-meta clearfix">
-                                  <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
+                                  <span class="posted-on"><i class="far fa-clock"></i>23 hours ago</span>
                                   <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
                                   <span class="post-view"><i class="fa fa-eye"></i>90</span>
                                 </div>
@@ -205,41 +198,146 @@
                               <div class="slick-list draggable" style="height: 672px;">
                                 <div class="slick-track"
                                   style="opacity: 1; height: 672px; transform: translate3d(0px, 0px, 0px);">
-                                  
-                                  <!-- Render the side bar posts dynamically -->
-                                  @foreach($posts as $post)
-                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="{{$loop->index+1}}"
+                                  <div class="single-post clearfix slick-slide slick-current slick-active"
+                                    data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img
+                                            src="images/940d914c-5e88-4781-bece-d78fe72f142e.jpg"
+                                            alt="شركة الدريس للخدمات البترولية والنقليات " الدريس""=""
+                                            title="شركة الدريس للخدمات البترولية والنقليات " class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
+
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>2 hours ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A/%D8%A7%D9%84%D8%AF%D8%B1%D9%8A%D8%B3-%D9%8A%D8%AD%D9%82%D9%82-%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%88%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%A7%D9%86-%D9%86%D9%86%D8%B5%D8%AD-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D9%8A-"
+                                            tabindex="0">الدريس يحقق مستهدفنا الأول ويقترب من المستهدف الثاني والان ننصح
+                                            بالاتي </a></h2>
+                                      </div>
+
+                                    </div>
+
+                                  </div>
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="1"
                                     aria-hidden="false" tabindex="0" style="width: 356px;">
                                     <div class="slider-nav-inner-wrapper">
                                       <div class="post-thumb">
                                         <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                          <img src="images/{{$post['thumbnail']}}"
-                                            alt="{{$post['title']}}"
-                                            title="{{$post['title']}}"
+                                          <img
+                                            src="images/4d8f7f02-d77d-4cc0-aab1-5517f709899a.jpg"
+                                            alt="القطاع الصناعي بريطانيا " title="القطاع الصناعي بريطانيا "
                                             class="mCS_img_loaded">
                                           <div class="image-overlay"></div>
                                         </a>
                                       </div>
 
                                       <div class="post-caption-wrapper">
-                                        <span class="posted-on"><i class="far fa-clock"></i>{{$post['readableCreatedAt']}}</span>
+                                        <span class="posted-on"><i class="far fa-clock"></i>3 hours ago</span>
                                         <h2 class="large-font"><a
-                                            href="https://www.ofeed.com/Fundamental_Comment/{{$post['slug']}}"
-                                            tabindex="0">{{$post['title']}}</a></h2>
+                                            href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D9%8A-%D9%81%D9%8A-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7-%D9%8A%D8%B9%D9%88%D8%AF-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%85%D9%88"
+                                            tabindex="0">القطاع الصناعي في بريطانيا يعود إلى النمو</a></h2>
                                       </div>
+
                                     </div>
+
                                   </div>
-                                @endforeach
-                                <!-- ./Render the side bar posts dynamically -->
-                             
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="2"
+                                    aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img
+                                            src="images/40fc0813-5901-4450-b831-bb721280f324.jpg"
+                                            alt="منطقة اليورو" title="منطقة اليورو " class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
 
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88"
+                                            tabindex="0">تعافي كبير في مستويات اليورو بعد تقلص انكماش منطقة اليورو</a>
+                                        </h2>
+                                      </div>
 
+                                    </div>
 
+                                  </div>
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="3"
+                                    aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img
+                                            src="images/aa2897bf-3450-45f3-8e9c-81bbdfe1d2ed.jpg"
+                                            alt="اليوان الرقمي الصيني " title="اليوان الرقمي الصيني "
+                                            class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
 
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>23 hours ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D8%A7%D9%84%D9%8A%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D9%82%D8%AF-%D9%8A%D8%AE%D8%B1%D8%AC-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%88%D8%B1-%D9%82%D8%B1%D9%8A%D8%A8%D9%8B%D8%A7"
+                                            tabindex="0">اليوان الرقمي الصيني قد يخرج إلى النور قريبًا</a></h2>
+                                      </div>
 
+                                    </div>
 
+                                  </div>
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="4"
+                                    aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img
+                                            src="images/90eb55a9-ac64-45a3-ad66-85a0068e7752.jpg"
+                                            alt="المركزي الصيني " title="المركزي الصيني " class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
 
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%B9%D9%88%D8%AF%D8%A9-%D8%AA%D9%81%D8%B4%D9%8A-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7-%D9%8A%D8%AF%D9%81%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D8%A5%D9%84%D9%89-%D8%AA%D8%AB%D8%A8%D9%8A%D8%AA-%D8%B3%D8%B9%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9"
+                                            tabindex="0">عودة تفشي كورونا يدفع المركزي الصيني إلى تثبيت سعر الفائدة</a>
+                                        </h2>
+                                      </div>
 
+                                    </div>
+
+                                  </div>
+                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="5"
+                                    aria-hidden="false" tabindex="0" style="width: 356px;">
+                                    <div class="slider-nav-inner-wrapper">
+                                      <div class="post-thumb">
+                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                          <img
+                                            src="images/d470861e-e44f-4dae-988c-04af738641fb.jpg"
+                                            alt="شركة فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية"
+                                            title="شركة فوري لتكنولوجيا البنوك والمدفوعات الإلكترونية"
+                                            class="mCS_img_loaded">
+                                          <div class="image-overlay"></div>
+                                        </a>
+                                      </div>
+
+                                      <div class="post-caption-wrapper">
+                                        <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
+                                        <h2 class="large-font"><a
+                                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A/%D9%81%D9%88%D8%B1%D9%8A-%D9%8A%D8%AD%D9%82%D9%82-%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D9%86%D8%A7-%D9%88%D9%8A%D8%B3%D8%AC%D9%84-%D8%A3%D8%B9%D9%84%D9%89-%D8%B3%D8%B9%D8%B1-%D9%81%D9%8A-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%87-"
+                                            tabindex="0">فوري يحقق مستهدفنا ويسجل أعلى سعر في تاريخه </a></h2>
+                                      </div>
+
+                                    </div>
+
+                                  </div>
                                 </div>
                               </div>
 
@@ -395,7 +493,7 @@
                           </div>
                           <div class="content-wrapper">
                             <div class="post-meta clearfix">
-                              <span class="posted-on"><i class="far fa-clock"></i>5 hours ago</span>
+                              <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
                               <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
                               <span class="post-view"><i class="fa fa-eye"></i>36</span>
                             </div>
@@ -486,8 +584,8 @@
                           <div class="lSSlideOuter">
                             <div class="lSSlideWrapper usingCss">
                               <ul class="featuredSlider widget-cat-slider lightSlider lsGrab lSSlide"
-                                style="width: 2268px; transform: translate3d(-1134px, 0px, 0px); height: 230px; padding-bottom: 0%;">
-                                <li class="slide single-post clearfix clone left lslide"
+                                style="width: 2268px; transform: translate3d(0px, 0px, 0px); height: 230px; padding-bottom: 0%;">
+                                <li class="slide single-post clearfix clone left lslide active"
                                   style="width: 378px; margin-right: 0px;">
                                   <div class="post-thumb">
                                     <img
@@ -552,8 +650,7 @@
                                   </div>
 
                                 </li>
-                                <li class="slide single-post clearfix lslide active"
-                                  style="width: 378px; margin-right: 0px;">
+                                <li class="slide single-post clearfix lslide" style="width: 378px; margin-right: 0px;">
                                   <div class="post-thumb">
                                     <img
                                       src="images/6bdb9bc2-668c-44c4-9c41-ac1e3a4f8330.jpg"
@@ -622,11 +719,11 @@
                               <div class="lSAction"><a class="lSPrev"></a><a class="lSNext"></a></div>
                             </div>
                             <ul class="lSPager lSpg" style="margin-top: 5px;">
-                              <li class=""><a href="https://www.ofeed.com/#">1</a></li>
-                              <li class=""><a href="https://www.ofeed.com/#">2</a></li>
-                              <li class="active"><a href="https://www.ofeed.com/#">3</a></li>
+                              <li class="active"><a href="https://www.ofeed.com/#">1</a></li>
+                              <li><a href="https://www.ofeed.com/#">2</a></li>
+                              <li><a href="https://www.ofeed.com/#">3</a></li>
                               <li><a href="https://www.ofeed.com/#">4</a></li>
-                              <li class=""><a href="https://www.ofeed.com/#">5</a></li>
+                              <li><a href="https://www.ofeed.com/#">5</a></li>
                               <li><a href="https://www.ofeed.com/#">6</a></li>
                             </ul>
                           </div>
@@ -1716,7 +1813,7 @@
                         </div>
                         <div class="block-cat-content 1">
                           <div class="left-post-wrapper wow fadeInDown" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInDown;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="single-post clearfix">
                               <div class="post-thumb">
                                 <a class="thumb-zoom"
@@ -1735,7 +1832,7 @@
                                 <div class="post-caption-inner">
                                   <div class="post-meta clearfix">
                                     <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
-                                    <span class="post-view"><i class="fa fa-eye"></i>25</span>
+                                    <span class="post-view"><i class="fa fa-eye"></i>24</span>
                                     <span class="posted-on"><i class="fa fa-clock-o"></i>2020-06-23</span>
                                   </div>
                                   <h2 class="small-font">
@@ -1750,7 +1847,7 @@
 
                           </div>
                           <div class="right-posts-wrapper wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="single-post clearfix">
                               <div class="post-thumb">
                                 <a class="thumb-zoom"
@@ -1912,7 +2009,7 @@
                       <div class="vmagazine-grid-list block-post-wrapper grid">
                         <div class="posts-wrap">
                           <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83/%D8%A5%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83-%D8%AA%D8%A8%D8%A7%D9%8A%D9%86-%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1-%D9%81%D9%8A%D8%B1%D9%88%D8%B3-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7-%D8%A8%D9%8A%D9%86-%D9%82%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85"
@@ -1941,7 +2038,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83/%D8%A5%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83-%D8%AA%D8%A3%D8%AB%D9%8A%D8%B1-%D9%81%D9%8A%D8%B1%D9%88%D8%B3-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9"
@@ -1970,7 +2067,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83/%D8%A5%D9%86%D9%81%D9%88%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83-%D9%87%D9%84-%D9%8A%D8%AC%D8%A8-%D8%A5%D8%B9%D8%A7%D8%AF%D8%A9-%D9%81%D8%AA%D8%AD-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D8%A2%D9%86"
@@ -2019,7 +2116,7 @@
                       <div class="vmagazine-grid-list block-post-wrapper grid">
                         <div class="posts-wrap">
                           <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D9%8A-%D9%81%D9%8A-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7-%D9%8A%D8%B9%D9%88%D8%AF-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%85%D9%88"
@@ -2033,7 +2130,7 @@
 
                             <div class="post-content-wrapper clearfix">
                               <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
+                                <span class="posted-on"><i class="far fa-clock"></i>3 hours ago</span>
                                 <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
                                 <span class="post-view"><i class="fa fa-eye"></i>39</span>
                               </div>
@@ -2048,7 +2145,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D9%85%D8%A4%D8%B4%D8%B1-%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%B1%D8%AF-%D8%A2%D9%86%D8%AF-%D8%A8%D9%88%D8%B1%D8%B2-%D8%A3%D8%B8%D9%87%D8%B1-%D8%B9%D9%84%D8%A7%D9%82%D8%A9-%D8%B9%D9%83%D8%B3%D9%8A%D8%A9-%D9%85%D8%B9-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1"
@@ -2077,7 +2174,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D8%A7%D9%84%D9%8A%D9%88%D9%86%D8%A7%D9%86%D9%8A-%D9%8A%D9%86%D9%83%D9%85%D8%B4-%D8%AE%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D8%A7%D9%84%D8%B9%D8%A7%D9%85-%D8%A8%D8%B3%D8%A8%D8%A8-%D8%A7%D9%84%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7"
@@ -2126,7 +2223,7 @@
                       <div class="vmagazine-grid-list block-post-wrapper grid">
                         <div class="posts-wrap">
                           <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%84%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D9%83%D9%8A%D9%81-%D9%86%D8%B4%D8%A3-%D9%88%D8%AA%D8%B7%D9%88%D8%B1-%D8%9F-"
@@ -2154,7 +2251,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%84%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A/%D9%83%D9%84-%D9%85%D8%A7-%D8%AA%D8%B1%D9%8A%D8%AF-%D9%85%D8%B9%D8%B1%D9%81%D8%AA%D9%87-%D8%B9%D9%86-%D8%A7%D9%84%D8%A8%D9%86%D9%83-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-%D9%88%D8%B3%D9%8A%D8%A7%D8%B3%D8%AA%D9%87-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A%D8%A9"
@@ -2182,7 +2279,7 @@
                           </div>
 
                           <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                            style="visibility: hidden; animation-duration: 0.7s; animation-name: none;">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
                                 href="https://www.ofeed.com/%D8%A7%D9%84%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%D9%8A/%D9%83%D9%84-%D9%85%D8%A7-%D8%AA%D8%B1%D9%8A%D8%AF-%D9%85%D8%B9%D8%B1%D9%81%D8%AA%D9%87-%D8%B9%D9%86-%D8%A7%D9%84%D8%A8%D9%86%D9%83-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%88%D8%B3%D9%8A%D8%A7%D8%B3%D8%AA%D9%87-%D8%A7%D9%84%D9%86%D9%82%D8%AF%D9%8A%D8%A9"
