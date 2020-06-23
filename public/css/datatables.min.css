@@ -41,10 +41,10 @@ table.dataTable {
 }
 
     table.dataTable td, table.dataTable th {
-        width: -webkit-fill-available !important;
-        box-sizing: border-box;
+        width: 10%;
+        box-sizing: content-box;
         border: 1px solid #e1e1e1;
-        padding: 2px 2px;
+        padding: 5px 10px;
         text-align: -webkit-center;
     }
 
@@ -62,23 +62,18 @@ div.dataTables_wrapper div.dataTables_length label {
     white-space: nowrap;
 }
 
-.ofeedAM:nth-child(1) {
-    /* direction: rtl; */
-    /* float: right; */
+.ofeedAM {
+    direction: rtl;
+    float: right;
 }
-.ofeedAM:nth-child(2) {
-    float: left;
-    text-align: left;
-}
-.ofeedAM:nth-child(2) input {
-}
+
 div.dataTables_wrapper div.dataTables_length select {
     width: auto;
     display: inline-block
 }
 
 div.dataTables_wrapper div.dataTables_filter {
-    text-align: right;
+    text-align: right
 }
 
     div.dataTables_wrapper div.dataTables_filter label {

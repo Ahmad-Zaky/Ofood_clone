@@ -33,10 +33,28 @@ class PostService {
   public function formDate($date)
   {
     // not detailed date like (3 days ago)
-    $compact = '';
     $date = $this->cleanDateStr($date);
     $diff =  time() - strtotime($date);
+    $compact = $this->getCompactDate($diff);
     
+    // detailed date like (Created : 2020-06-22 , at 14:08)
+    $detailed = "Created " . str_replace(' ', ', at ', substr($date, 0, -3));
+
+    return [
+      'compact' => $compact,
+      'detailed' => $detailed
+    ];
+  }
+
+  /**
+   * get the compact date
+   * @param $dif the difference time between now and the created date
+   * @return $compact the compat readable date 
+   */
+  public function getCompactDate($diff)
+  {
+    $compact = '';
+
     // Years
     $years = floor($diff / (365*60*60*24));
     if($years) {
@@ -50,7 +68,10 @@ class PostService {
         // Days
         $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
         if($days) {
-          $compact = $days === 1.0 ? '1 day ago' : $days . ' days ago';
+          $compact = $days === 1.0 ? '1 day ago' :
+                                  ($days >= 21.0 ? 'last 3 week' :
+                                  ($days >= 14.0 ? 'last 2 week' :
+                                  ($days >= 14.0 ? 'last week' : $days.' days ago')));
         } else {
           $hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24)/ (60*60));
           if($hours) {
@@ -65,13 +86,7 @@ class PostService {
         }
       }
     }
-    // detailed date like (Created : 2020-06-22 , at 14:08)
-    $detailed = "Created " . str_replace(' ', ', at ', substr($date, 0, -3));
-
-    return [
-      'compact' => $compact,
-      'detailed' => $detailed
-    ];
+    return $compact;
   }
 
   /**

@@ -53,7 +53,11 @@ class Post extends Model
      */
     public function home()
     {
-        $posts = self::where('approved', $this->_TRUE)->latest()->take(6)->with('category', 'comments')->get();
+        $posts = self::where('approved', $this->_TRUE)
+                 ->latest()
+                 ->take(6)
+                 ->with('category', 'comments')
+                 ->get();
         $postService = new PostService;
         return $postService->getReadableCreatedAt($posts);
     }
@@ -63,7 +67,12 @@ class Post extends Model
      */
     public function mostViewed()
     {   
-
+        $posts = self::where('approved', $this->_TRUE)
+                ->orderBy('views_count', 'desc')
+                ->with('category')
+                ->get();
+        $postService = new PostService;
+        return $postService->getReadableCreatedAt($posts);
     }
 
     /**
@@ -71,7 +80,8 @@ class Post extends Model
      */
     public function categories()
     {
-
+        return $postsByCats = Category::with('posts')->get();
+        // return Category::getPostsByCategories();
     }
 
     
