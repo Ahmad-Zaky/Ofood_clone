@@ -80,8 +80,7 @@ class Post extends Model
      */
     public function categories()
     {
-        return $postsByCats = Category::with('posts')->get();
-        // return Category::getPostsByCategories();
+        return Category::with('posts')->get();
     }
 
     

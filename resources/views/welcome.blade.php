@@ -487,6 +487,7 @@
                             <div class="lSSlideWrapper usingCss">
                               <ul class="featuredSlider widget-cat-slider lightSlider lsGrab lSSlide"
                                 style="width: 2268px; transform: translate3d(-1134px, 0px, 0px); height: 230px; padding-bottom: 0%;">
+                                
                                 <li class="slide single-post clearfix clone left lslide"
                                   style="width: 378px; margin-right: 0px;">
                                   <div class="post-thumb">
@@ -531,27 +532,29 @@
                                   </div>
 
                                 </li>
-                                <li class="slide single-post clearfix lslide" style="width: 378px; margin-right: 0px;">
-                                  <div class="post-thumb">
-                                    <img
-                                      src="images/9481064d-67aa-4af1-9e54-eb3812b73e15.jpg"
-                                      alt="الدولار" title="الدولار">
-                                  </div>
-                                  <div class="post-caption">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="far fa-clock"></i>last week</span>
-                                      <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>100</span>
-                                    </div>
-
-                                    <h3 class="small-font">
-                                      <a
-                                        href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D9%8A%D8%AA%D9%84%D9%82%D9%89-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D9%85%D9%86-%D8%B9%D9%88%D8%AF%D8%A9-%D8%A7%D9%84%D8%B7%D9%84%D8%A8-%D8%B9%D9%84%D9%8A%D9%87-%D9%83%D9%85%D9%84%D8%A7%D8%B0-%D8%A2%D9%85%D9%86">الدولار
-                                        الأمريكي يتلقى الدعم من عودة الطلب عليه كملاذ آمن</a>
-                                    </h3>
+                                <!-- Most Viewed the First Image only -->
+                              <li class="slide single-post clearfix clone left lslide active"
+                                style="width: 378px; margin-right: 0px;">
+                                <div class="post-thumb">
+                                  <img src="images/{{$mostViewed[0]['thumbnail']}}"
+                                    alt="{{$mostViewed[0]['title']}}"
+                                    title="{{$mostViewed[0]['title']}}">
+                                </div>
+                                <div class="post-caption">
+                                  <div class="post-meta" style="color:white;">
+                                    <span class="posted-on"><i class="far fa-clock"></i>{{$mostViewed[0]['readableCreatedAt']}}</span>
+                                    <span class="likes"><i class="far fa-thumbs-up">{{$mostViewed[0]['likes_count']}}</i></span>
+                                    <span class="post-view"><i class="fa fa-eye"></i>{{$mostViewed[0]['views_count']}}</span>
                                   </div>
 
-                                </li>
+                                  <h3 class="small-font">
+                                    <a
+                                      href="https://www.ofeed.com/Fundamental_Comment/{{$mostViewed[0]['slug']}}">{{$mostViewed[0]['title']}}</a>
+                                  </h3>
+                                </div>
+
+                              </li>
+                              <!-- Most Viewed the First Image only -->
                                 <li class="slide single-post clearfix lslide active"
                                   style="width: 378px; margin-right: 0px;">
                                   <div class="post-thumb">
