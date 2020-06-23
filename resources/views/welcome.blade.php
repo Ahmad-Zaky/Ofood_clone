@@ -36,34 +36,40 @@
                     <div class="slick-wrap sl-before-load slick-initialized slick-slider">
                       <div class="slick-list draggable">
                         <div class="slick-track" style="opacity: 1; width: 7020px;">
+
+
+
                           <!-- Print the last Article here -->
                           <div class="single-post clearfix slick-slide slick-current slick-active" data-slick-index="0"
                             aria-hidden="false" tabindex="0"
                             style="width: 1170px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
                             <div class="post-thumb">
                               <img src="images/{{$posts[0]['thumbnail']}}"
-                                alt="S&amp;P long rally highlights inverse relation with dollar"
-                                title="S&amp;P long rally highlights inverse relation with dollar">
+                                alt="{{$posts[0]['title']}}"
+                                title="{{$posts[0]['title']}}">
                               <div class="image-overlay"></div>
                             </div>
 
                             <div class="post-content-wrapper clearfix">
                               <span class="cat-links">
                                 <a href="https://www.ofeed.com/Catnew?Catagory=FG" class="cat-53" rel="category tag"
-                                  tabindex="0">$posts[0]['</a></span>
+                                  tabindex="0">{{$posts[0]['category']['name']}}</a></span>
                               <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>2 days ago</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>73</span>
+                                <span class="posted-on"><i class="far fa-clock"></i>{{$posts[0]['readableCreatedAt']}}</span>
+                                <span class="likes"><i class="far fa-thumbs-up"></i>{{$posts[0]['likes_count']}}</span>
+                                <span class="post-view"><i class="fa fa-eye"></i>{{$posts[0]['views_count']}}</span>
                               </div>
 
                               <h3 class="extra-large-font">
-                                <a href="https://www.ofeed.com/FX_Graph/US-stocks-benchmark-long-rally-highlights-inverse-relation-with-dollar"
-                                  tabindex="0">S&amp;P long rally highlights inverse relation with dollar</a>
+                                <a href="https://www.ofeed.com/FX_Graph/{{$posts[0]['slug']}}"
+                                  tabindex="0">{{$posts[0]['title']}}</a>
                               </h3>
                             </div>
                           </div>
                           <!-- ./Print the last Article here -->
+
+
+
                           <div class="single-post clearfix slick-slide" data-slick-index="1" aria-hidden="true"
                             tabindex="-1"
                             style="width: 1170px; position: relative; left: -1170px; top: 0px; z-index: 998; opacity: 0;">
@@ -216,19 +222,19 @@
                                     <div class="slider-nav-inner-wrapper">
                                       <div class="post-thumb">
                                         <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                          <img src="images/{{$post->thumbnail}}"
-                                            alt="Asian stocks retreat amid corona resurgence concerns"
-                                            title="Asian stocks retreat amid corona resurgence concerns"
+                                          <img src="images/{{$post['thumbnail']}}"
+                                            alt="{{$post['title']}}"
+                                            title="{{$post['title']}}"
                                             class="mCS_img_loaded">
                                           <div class="image-overlay"></div>
                                         </a>
                                       </div>
 
                                       <div class="post-caption-wrapper">
-                                        <span class="posted-on"><i class="far fa-clock"></i>3 days ago</span>
+                                        <span class="posted-on"><i class="far fa-clock"></i>{{$post['readableCreatedAt']}}</span>
                                         <h2 class="large-font"><a
-                                            href="https://www.ofeed.com/Fundamental_Comment/Asian-stocks-retreat-amid-corona-resurgence-concerns"
-                                            tabindex="0">{{$post->title}}</a></h2>
+                                            href="https://www.ofeed.com/Fundamental_Comment/{{$post['slug']}}"
+                                            tabindex="0">{{$post['title']}}</a></h2>
                                       </div>
                                     </div>
                                   </div>

@@ -14,7 +14,7 @@ class Post extends Model
      * @var string
      */
     protected $dateFormat = 'U';
-    
+
     /**
      * constants 
      * 1. approved posts
@@ -33,6 +33,14 @@ class Post extends Model
     }
     
     /**
+     * Get the category of the post.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+    
+    /**
      * Get the reg user (Author) of the post.
      */
     public function regUser()
@@ -45,8 +53,9 @@ class Post extends Model
      */
     public function home()
     {
-        $postService = new PostService; 
-        return $postService->getReadableCreatedAt(self::where('approved', $this->_TRUE)->latest()->take(6)->get());
+        $posts = self::where('approved', $this->_TRUE)->latest()->take(6)->with('category', 'comments')->get();
+        $postService = new PostService;
+        return $postService->getReadableCreatedAt($posts);
     }
 
     /**

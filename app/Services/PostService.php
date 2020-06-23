@@ -1,6 +1,8 @@
 <?php
 namespace App\Services;
 
+use Illuminate\Support\Collection;
+
 class PostService {
 
   /**
@@ -20,8 +22,8 @@ class PostService {
 
       return $post;
     },$homePosts->toArray());
-    dd($homePosts);
-    return $homePosts;  
+    
+    return collect($homePosts);  
   }
 
   /**
