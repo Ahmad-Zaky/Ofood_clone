@@ -283,77 +283,61 @@
                         style="visibility: visible; animation-duration: 1s; animation-name: zoomIn;">
                         <div class="block-header clearfix">
                         </div>
-
+                        @php
+                          $category = null;
+                          $firstPost = null;
+                          $catPosts = null;
+                          foreach($categories as $cat) {
+                            if($cat->name === 'التحليل الفني') {
+                              $category = $cat;
+                              $firstPost = $category->posts[0];
+                              $catPosts = $category->posts;
+                            }
+                          }
+                        @endphp
+                        
                         <div class="single-post first clearfix">
                           <div class="post-thumb">
                             <a class="thumb-zoom"
-                              href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85-15-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020"
-                              title="التحليل الفني ليوم 15 يونيه 2020">
+                              href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                              title="{{$firstPost['title']}}">
                               <img
-                                src="images/699b48e4-bf34-4b31-a9f7-8b4a0f87f7b2.jpeg"
-                                alt="التحليل الفني ليوم 15 يونيه 2020" title="التحليل الفني ليوم 15 يونيه 2020">
+                                src="images/{{$firstPost['thumbnail']}}"
+                                alt="{{$firstPost['title']}}" title="{{$firstPost['title']}}">
                               <div class="image-overlay"></div>
                             </a>
                           </div>
                           <div class="content-wrapper">
                             <div class="post-meta clearfix">
-                              <span class="posted-on"><i class="far fa-clock"></i>last week</span>
-                              <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
-                              <span class="post-view"><i class="fa fa-eye"></i>22</span>
+                              <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                              <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                              <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
                             </div>
 
                             <h2 class="large-font">
                               <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85-15-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020">التحليل
-                                الفني ليوم 15 يونيه 2020</a>
+                                href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                             </h2>
                           </div>
-
                         </div>
+
+
+                        @foreach($catPosts as $key => $catPost)
+                        @if($key > 0)
                         <div class="single-post bottom-post clearfix">
                           <div class="content-wrapper">
                             <h2 class="small-font">
                               <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85--6-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020">التحليل
-                                الفني ليوم 6 يونيه 2020</a>
+                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                             </h2>
                           </div>
 
                         </div>
+                        @endif
+                        @endforeach
 
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85--8-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020">التحليل
-                                الفني ليوم 8 يونيه 2020</a>
-                            </h2>
-                          </div>
-
-                        </div>
-
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85--5-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020-">التحليل
-                                الفني ليوم 5 يونيه 2020 </a>
-                            </h2>
-                          </div>
-
-                        </div>
-
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%81%D9%86%D9%8A/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D9%81%D9%86%D9%8A-%D9%84%D9%8A%D9%88%D9%85--3-%D9%8A%D9%88%D9%86%D9%8A%D9%87-2020">التحليل
-                                الفني ليوم 3 يونيه 2020</a>
-                            </h2>
-                          </div>
-
-                        </div>
-
+                        
+                        
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=TA">شاهد المزيد</a></span>
                       </div>
 
@@ -381,76 +365,61 @@
                         style="visibility: visible; animation-duration: 1s; animation-name: zoomIn;">
                         <div class="block-header clearfix">
                         </div>
+                        
+                        
+                        @php
+                          $category = null;
+                          $firstPost = null;
+                          $catPosts = null;
+                          foreach($categories as $cat) {
+                            if($cat->name === 'التحليل الاساسي') {
+                              $category = $cat;
+                              $firstPost = $category->posts[0];
+                              $catPosts = $category->posts;
+                            }
+                          }
+                        @endphp
+
 
                         <div class="single-post first clearfix">
                           <div class="post-thumb">
                             <a class="thumb-zoom"
-                              href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88"
-                              title="منطقة اليورو ">
+                              href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                              title="{{$firstPost['title']}} ">
                               <img
-                                src="images/40fc0813-5901-4450-b831-bb721280f324.jpg"
-                                alt="منطقة اليورو" title="منطقة اليورو ">
+                                src="images/{{$firstPost['thumbnail']}}"
+                                alt="{{$firstPost['title']}}" title="{{$firstPost['title']}} ">
                               <div class="image-overlay"></div>
                             </a>
                           </div>
                           <div class="content-wrapper">
                             <div class="post-meta clearfix">
-                              <span class="posted-on"><i class="far fa-clock"></i>5 hours ago</span>
-                              <span class="comments"><i class="far fa-thumbs-up"></i>0</span>
-                              <span class="post-view"><i class="fa fa-eye"></i>36</span>
+                              <span class="post-view"><i class="far fa-eye"></i>{{$firstPost['views_count']}}</span>
+                              <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                              <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
                             </div>
 
                             <h2 class="large-font">
                               <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88">تعافي
-                                كبير في مستويات اليورو بعد تقلص انكماش منطقة اليورو</a>
+                                href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                             </h2>
                           </div>
 
                         </div>
+                        @foreach($catPosts as $key => $catPost)
+                        @if($key > 0)
                         <div class="single-post bottom-post clearfix">
                           <div class="content-wrapper">
                             <h2 class="small-font">
                               <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">الذهب
-                                يقفز إلى الأعلى في شهر وسط تجدد مخاوف عدوى كورونا</a>
+                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                             </h2>
                           </div>
 
                         </div>
-
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B2%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2%D9%8A">المركزي
-                                البريطاني يثبت أسعار الفائدة ويزيد البرنامج التحفيزي</a>
-                            </h2>
-                          </div>
-
-                        </div>
-
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D8%B3%D9%8A%D9%88%D9%8A%D8%A9-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%88%D8%B3%D8%B7-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9-%D9%85%D9%86-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">الأسهم
-                                الأسيوية تتراجع وسط مخاوف الموجة الثانية من كورونا</a>
-                            </h2>
-                          </div>
-
-                        </div>
-
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%AD%D8%B2%D9%85%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A5%D9%84%D9%89-1-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88%D9%84%D8%A7%D8%B1">المركزي
-                                الياباني يزيد من حزمة تحفيز الشركات إلى 1 تريليون دولار</a>
-                            </h2>
-                          </div>
-
-                        </div>
+                        @endif
+                        @endforeach
+                      
 
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FC">شاهد المزيد</a></span>
                       </div>
@@ -773,57 +742,33 @@
                   <div class="panel-widget-style panel-widget-style-for-38-1-2-4">
                     <h4 class="block-title"><span class="title-bg">اخبار العملات</span></h4>
                     <div class="vmagazine-rec-posts recent-post-widget block_layout_1">
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%B9%D9%88%D8%AF%D8%A9-%D8%AA%D9%81%D8%B4%D9%8A-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7-%D9%8A%D8%AF%D9%81%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D8%A5%D9%84%D9%89-%D8%AA%D8%AB%D8%A8%D9%8A%D8%AA-%D8%B3%D8%B9%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9"
-                            class="thumb-zoom">
-                            <img
-                              src="images/90eb55a9-ac64-45a3-ad66-85a0068e7752.jpg"
-                              alt="المركزي الصيني " title="المركزي الصيني ">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%B9%D9%88%D8%AF%D8%A9-%D8%AA%D9%81%D8%B4%D9%8A-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7-%D9%8A%D8%AF%D9%81%D8%B9-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D8%A5%D9%84%D9%89-%D8%AA%D8%AB%D8%A8%D9%8A%D8%AA-%D8%B3%D8%B9%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9">عودة
-                            تفشي كورونا يدفع المركزي الصيني إلى تثبيت سعر الفائدة</a>
-                        </div>
-                      </div>
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%86%D8%AA%D8%B9%D8%A7%D8%B4-%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AC%D8%B2%D8%A6%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D9%88%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%AA%D9%83%D8%A7%D9%84%D9%8A%D9%81-%D8%A7%D9%84%D8%A7%D8%BA%D9%84%D8%A7%D9%82-"
-                            class="thumb-zoom">
-                            <img
-                              src="images/189893f4-cbc3-4df0-98af-931234f14f04.jpg"
-                              alt="مبيعات التجزئة " title="مبيعات التجزئة ">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%86%D8%AA%D8%B9%D8%A7%D8%B4-%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%AC%D8%B2%D8%A6%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D9%88%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%AA%D9%83%D8%A7%D9%84%D9%8A%D9%81-%D8%A7%D9%84%D8%A7%D8%BA%D9%84%D8%A7%D9%82-">انتعاش
-                            مبيعات التجزئة في المملكة المتحدة وارتفاع تكاليف الاغلاق </a>
-                        </div>
-                      </div>
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%B3%D9%88%D9%8A%D8%B3%D8%B1%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%85%D8%B9-%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%D9%87-%D9%84%D9%84%D8%AA%D8%AF%D8%AE%D9%84-%D9%81%D9%8A-%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D9%81%D9%88%D8%B1%D9%83%D8%B3"
-                            class="thumb-zoom">
-                            <img
-                              src="images/20cdfaff-8773-4e32-999b-11e3b1964d33.jpg"
-                              alt="المركزي السويسري " title="المركزي السويسري ">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%B3%D9%88%D9%8A%D8%B3%D8%B1%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%85%D8%B9-%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF%D9%87-%D9%84%D9%84%D8%AA%D8%AF%D8%AE%D9%84-%D9%81%D9%8A-%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D9%81%D9%88%D8%B1%D9%83%D8%B3">المركزي
-                            السويسري يثبت الفائدة مع استعداده للتدخل في سوق الفوركس</a>
-                        </div>
-                      </div>
+                      
+                        @foreach($categories as $cat)
+                          @if($cat->name === 'اخبار العملات')
+                            @php
+                              $catPosts = $cat->posts; 
+                            @endphp
+                            @foreach($catPosts as $catPost)
+                              <div class="recent-posts-content wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">
+                                <div class="image-recent-post post-thumb">
+                                  <a href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                    class="thumb-zoom">
+                                    <img
+                                      src="images/{{$catPost['thumbnail']}}"
+                                      alt="{{$catPost['title']}} " title="{{$catPost['title']}}">
+                                    <div class="image-overlay"></div>
+                                  </a>
+                                </div>
+                                <div class="recent-post-content">
+                                  <a style=" font-size: 1rem !important; "
+                                    href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                </div>
+                              </div>
+                            @endforeach
+                          @endif
+                        @endforeach
+                        
                       <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FN">شاهد المزيد</a></span>
                     </div>
                   </div>
@@ -833,57 +778,39 @@
                   <div class="panel-widget-style panel-widget-style-for-38-1-2-3">
                     <h4 class="block-title"><span class="title-bg">العملات الرقمية</span></h4>
                     <div class="vmagazine-rec-posts recent-post-widget block_layout_1">
+                      
+                      @php
+                        $category = null;
+                        $firstPost = null;
+                        $catPosts = null;
+                        foreach($categories as $cat) {
+                          if($cat->name === 'العملات الرقمية') {
+                            $category = $cat;
+                            $firstPost = $category->posts[0];
+                            $catPosts = $category->posts;
+                          }
+                        }
+                      @endphp
+                      @foreach($catPosts as $catPost)
                       <div class="recent-posts-content wow fadeInUp"
                         style="visibility: visible; animation-name: fadeInUp;">
                         <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D8%A7%D9%84%D9%8A%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D9%82%D8%AF-%D9%8A%D8%AE%D8%B1%D8%AC-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%88%D8%B1-%D9%82%D8%B1%D9%8A%D8%A8%D9%8B%D8%A7"
+                          <a href="https://www.ofeed.com/{{$catPost['slug']}}"
                             class="thumb-zoom">
                             <img
-                              src="images/aa2897bf-3450-45f3-8e9c-81bbdfe1d2ed.jpg"
-                              alt="اليوان الرقمي الصيني " title="اليوان الرقمي الصيني ">
+                              src="images/{{$catPost['thumbnail']}}"
+                              alt="{{$catPost['title']}} " title="{{$catPost['title']}} ">
                             <div class="image-overlay"></div>
                           </a>
                         </div>
                         <div class="recent-post-content">
                           <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D8%A7%D9%84%D9%8A%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D9%82%D8%AF-%D9%8A%D8%AE%D8%B1%D8%AC-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%88%D8%B1-%D9%82%D8%B1%D9%8A%D8%A8%D9%8B%D8%A7">اليوان
-                            الرقمي الصيني قد يخرج إلى النور قريبًا</a>
+                            href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                         </div>
                       </div>
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D9%81%D9%8A%D8%B3%D8%A8%D9%88%D9%83-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%A3%D9%87%D9%85%D9%8A%D8%A9-%D8%A5%D8%AF%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%D9%8A%D8%A9"
-                            class="thumb-zoom">
-                            <img
-                              src="images/3ba14c28-f7af-450c-9e9e-0136f20fbbb9.jpg"
-                              alt="فيسبوك العملات الرقمية" title="فيسبوك العملات الرقمية">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D9%81%D9%8A%D8%B3%D8%A8%D9%88%D9%83-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%A3%D9%87%D9%85%D9%8A%D8%A9-%D8%A5%D8%AF%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%D9%8A%D8%A9">فيسبوك
-                            يزيد من أهمية إدراج العملات الرقمية في التعاملات المستقبلية</a>
-                        </div>
-                      </div>
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D8%AA%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%AA%D8%AD%D9%82%D9%8A%D9%82-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-9000-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D8%A7%D9%86%D9%82%D8%B3%D8%A7%D9%85"
-                            class="thumb-zoom">
-                            <img
-                              src="images/deb18302-4b24-4b4e-a9ac-4c144b946918.jpg"
-                              alt="انقسام البيتكوين" title="انقسام البيتكوين">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA%D9%83%D9%88%D9%8A%D9%86-%D8%AA%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%AA%D8%AD%D9%82%D9%8A%D9%82-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-9000-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D8%A7%D9%86%D9%82%D8%B3%D8%A7%D9%85">البيتكوين
-                            تقترب من تحقيق مستويات 9000 بعد الانقسام</a>
-                        </div>
-                      </div>
+                      @endforeach
+
+                      
                       <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=CC">شاهد المزيد</a></span>
                     </div>
                   </div>

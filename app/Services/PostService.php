@@ -34,7 +34,7 @@ class PostService {
   {
     // not detailed date like (3 days ago)
     $date = $this->cleanDateStr($date);
-    $diff =  time() - strtotime($date);
+    $diff =  time() > strtotime($date) ? time() - strtotime($date) : strtotime($date) - time();
     $compact = $this->getCompactDate($diff);
     
     // detailed date like (Created : 2020-06-22 , at 14:08)
@@ -58,7 +58,7 @@ class PostService {
     // Years
     $years = floor($diff / (365*60*60*24));
     if($years) {
-      $compact = $years === 1.0 ? '1 year ago' : $years . 'years ago';
+      $compact = $years === 1.0 ? '1 year ago' : $years . ' years ago';
     } else {
       // Months
       $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
