@@ -81,8 +81,10 @@ class Post extends Model
     public function categories()
     {
         $postService = new PostService;
-        $catWithPosts = Category::with('posts')->get();
-        
+        $catWithPosts = Category::with(['posts' => function($query){
+            $query->latest();
+        }])->get();
+
         // get readable date format 
         foreach($catWithPosts as $key => $catPosts) {
             $catPosts->posts = $postService->getReadableCreatedAt($catPosts->posts);

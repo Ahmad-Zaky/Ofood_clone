@@ -243,7 +243,7 @@
                       class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-724 no-mega-menu">
                       <ul class="site-header-cart">
                         <li class="cart-icon ">
-                          <a href="https://www.ofeed.com/Login">
+                          <a href="{{asset('login')}}">
                             <span class="icon">
                               <i style="font-size: 36px" class="fas fa-user-circle fa-2x"></i>
                             </span>

@@ -9,66 +9,31 @@
                   </span>
                 </h4>
                 <div class="vmagazine-rec-posts recent-post-widget block_layout_2">
+                  
+                  @foreach($posts as $key => $post)
+                  @if($key < 3)
                   <div class="recent-posts-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                     <div class="image-recent-post post-thumb">
-                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7"
+                      <a href="https://www.ofeed.com/{{$post['slug']}}"
                         class="thumb-zoom">
                         <img class="lazy"
-                          src="images/584f1bc6-fa17-4e36-b5c6-9a229d08551a.jpg"
-                          alt="الذهب كورونا" title="الذهب كورونا">
+                          src="images/{{$post['thumbnail']}}"
+                          alt="{{$post['title']}}" title="{{$post['title']}}">
                         <div class="image-overlay"></div>
                       </a>
                     </div>
                     <div class="recent-post-content">
                       <a
-                        href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">الذهب
-                        يقفز إلى الأعلى في شهر وسط تجدد مخاوف عدوى كورونا
+                        href="https://www.ofeed.com/{{$post['slug']}}">{{$post['title']}}
                       </a>
                       <div class="posted-date">
-                        <span class="posted-on"><i class="fa fa-clock-o"></i>2020-06-22</span>
+                        <span class="posted-on"><i class="fa fa-clock-o"></i>{{$post['readableCreatedAt']}}</span>
                       </div>
                     </div>
                   </div>
-                  <div class="recent-posts-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <div class="image-recent-post post-thumb">
-                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A/%D9%87%D9%84-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF-%D8%B1%D9%81%D8%B9-%D8%A7%D9%84%D8%AD%D8%B8%D8%B1-%D9%88%D8%A7%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%81%D8%AA%D8%AD-%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%AD%D9%83%D9%8A%D8%B1-%D9%81%D9%8A-%D8%A7%D8%AE%D8%AA%D8%B1%D8%A7%D9%82-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-19.20-%D8%B1%D9%8A%D8%A7%D9%84-"
-                        class="thumb-zoom">
-                        <img class="lazy"
-                          src="images/9364fd2f-2adf-4394-acbd-11933a55e24d.jpg"
-                          alt="شركة فواز عبد العزيز الحكير وشركاه" title="شركة فواز عبد العزيز الحكير وشركاه">
-                        <div class="image-overlay"></div>
-                      </a>
-                    </div>
-                    <div class="recent-post-content">
-                      <a
-                        href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A/%D9%87%D9%84-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF-%D8%B1%D9%81%D8%B9-%D8%A7%D9%84%D8%AD%D8%B8%D8%B1-%D9%88%D8%A7%D8%B9%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D9%81%D8%AA%D8%AD-%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%AD%D9%83%D9%8A%D8%B1-%D9%81%D9%8A-%D8%A7%D8%AE%D8%AA%D8%B1%D8%A7%D9%82-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-19.20-%D8%B1%D9%8A%D8%A7%D9%84-">هل
-                        يساعد رفع الحظر واعادة الفتح سهم الحكير في اختراق مقاومة 19.20 ريال
-                      </a>
-                      <div class="posted-date">
-                        <span class="posted-on"><i class="fa fa-clock-o"></i>2020-06-21</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="recent-posts-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <div class="image-recent-post post-thumb">
-                      <a href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D9%85%D8%A4%D8%B4%D8%B1-%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%B1%D8%AF-%D8%A2%D9%86%D8%AF-%D8%A8%D9%88%D8%B1%D8%B2-%D8%A3%D8%B8%D9%87%D8%B1-%D8%B9%D9%84%D8%A7%D9%82%D8%A9-%D8%B9%D9%83%D8%B3%D9%8A%D8%A9-%D9%85%D8%B9-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1"
-                        class="thumb-zoom">
-                        <img class="lazy"
-                          src="images/9d369840-fa94-44e4-9b8a-824aff488e0f.jpg"
-                          alt="علاقة عكسية الدولار" title="علاقة عكسية الدولار">
-                        <div class="image-overlay"></div>
-                      </a>
-                    </div>
-                    <div class="recent-post-content">
-                      <a
-                        href="https://www.ofeed.com/%D8%AC%D8%B1%D8%A7%D9%81%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%AA/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D9%85%D8%A4%D8%B4%D8%B1-%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%B1%D8%AF-%D8%A2%D9%86%D8%AF-%D8%A8%D9%88%D8%B1%D8%B2-%D8%A3%D8%B8%D9%87%D8%B1-%D8%B9%D9%84%D8%A7%D9%82%D8%A9-%D8%B9%D9%83%D8%B3%D9%8A%D8%A9-%D9%85%D8%B9-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D8%A7%D8%B1">ارتفاع
-                        مؤشر ستاندرد آند بورز أظهر علاقة عكسية مع الدولار
-                      </a>
-                      <div class="posted-date">
-                        <span class="posted-on"><i class="fa fa-clock-o"></i>2020-06-19</span>
-                      </div>
-                    </div>
-                  </div>
+                  @endif
+                  @endforeach
+                  
                 </div>
               </div>
             </div>

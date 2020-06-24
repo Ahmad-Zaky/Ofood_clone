@@ -38,8 +38,8 @@ class PostService {
     $compact = $this->getCompactDate($diff);
     
     // detailed date like (Created : 2020-06-22 , at 14:08)
-    $detailed = "Created " . str_replace(' ', ', at ', substr($date, 0, -3));
-
+    $detailed = "تاريخ " . str_replace(' ', ', الساعة ', substr($date, 0, -3));
+    
     return [
       'compact' => $compact,
       'detailed' => $detailed

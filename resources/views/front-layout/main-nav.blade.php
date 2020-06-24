@@ -95,7 +95,7 @@
                       </li>
                       <li
                         class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-724 no-mega-menu">
-                        <a href="https://www.ofeed.com/Login">Login</a></li>
+                        <a href="{{asset('login')}}">Login</a></li>
                     </ul>
                   </div>
                 </div>
