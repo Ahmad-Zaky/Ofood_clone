@@ -12,6 +12,25 @@ class PostService {
    *         of more detailed like (Created: 2020-06-22,  at 14:08)
    */
   function getReadableCreatedAt ($homePosts) {
+    
+    // in case one post object
+    if(!$homePosts instanceof Collection){
+      // clean the home posts created_at and updated_at strings
+      // but first check if timestamps are objects instead of string
+      $created_at = is_object($homePosts['created_at']) ?
+                                  date('d-m-Y H:s:i', strtotime($homePosts['created_at']))
+                                  : $this->cleanDateStr($homePosts['created_at']);
+      $updated_at = is_object($homePosts['updated_at']) ?
+                                  date('d-m-Y H:s:i', strtotime($homePosts['updated_at']))
+                                  : $this->cleanDateStr($homePosts['updated_at']);
+      return [
+        'myPost' => $homePosts,
+        'readableCreatedAt' => $this->formDate($created_at)['compact'],
+        'readableCreatedAtDetailed' => $this->formDate($created_at)['detailed']
+      ];
+    }
+
+    // in case posts collection
     $homePosts = array_map(function ($post) {
       // clean the home posts created_at and updated_at strings
       $post['created_at'] = $this->cleanDateStr($post['created_at']);

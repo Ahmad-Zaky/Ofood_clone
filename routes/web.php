@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 // User Side routes
 Route::get('/', 'PostController@index');
+Route::get('/category/{category:cat_code}', 'PostController@byCategory');
+Route::get('/{post:slug}', 'PostController@show');
 
 // Admin Panel (Dashboard) routes
 Auth::routes();

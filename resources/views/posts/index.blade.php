@@ -1,5 +1,14 @@
 @extends('front-layout.layout')
 @section('content')
+<style>
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  } 
+</style>
 <div id="content" class="site-content" style="transform: none;">
       <div class="vmagazine-breadcrumb-wrapper ">
         <div class="vmagazine-bread-home">
@@ -9,10 +18,9 @@
             <div class="vmagazine-breadcrumb">
               <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
                 <ul class="trail-items">
-                  <li class="trail-item trail-begin"><a href="https://www.ofeed.com/"
+                  <li class="trail-item trail-begin"><a href="{{asset('/')}}"
                       rel="home"><span>الرئيسية</span></a></li>
-                  <li class="trail-item"><a href="https://www.ofeed.com/Catnew?Catagory=FC"><span>التحليل
-                        الأساسي</span></a></li>
+                  <li class="trail-item"><a href="/category/{{$category['cat_code']}}"><span>{{$category['name']}}</span></a></li>
                 </ul>
               </nav>
             </div>
@@ -26,7 +34,7 @@
               class="post-496 post type-post status-publish format-standard has-post-thumbnail hentry category-fun category-sports tag-fashion tag-trending">
               <div class="vmagazine-related-wrapper" style="margin-top: 0rem;">
                 <h4 class="related-title">
-                  <span class="title-bg">التحليل الأساسي</span>
+                  <span class="title-bg">{{$category['name']}}</span>
                 </h4>
                 <div class="related-posts-wrapper clearfix">
                   <div id="zero-configuration_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -61,370 +69,47 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr role="row" class="odd">
-                              <td style="display: none" class="sorting_1">2020-06-23T12:52:24</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/40fc0813-5901-4450-b831-bb721280f324.jpg"
-                                        alt="منطقة اليورو" title="منطقة اليورو ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-23 , الساعه
-                                        12:52</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>45</span>
-                                      <h3 class="small-font">
+                            @if(!$categoryPosts->isEmpty())
+                              @foreach($categoryPosts as $catPost)
+                                <tr role="row" class="odd">
+                                  <!-- <td style="display: none" class="sorting_1">2020-06-23T12:52:24</td> -->
+                                  <td>
+                                    <div class="single-post">
+                                      <div class="post-thumb">
                                         <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88">
-                                          تعافي كبير في مستويات اليورو بعد تقلص انكماش منطقة اليورو
+                                          href="/{{$catPost['slug']}}">
+                                          <img
+                                            src="/images/{{$catPost['thumbnail']}}"
+                                            alt="{{$catPost['title']}}" title="{{$catPost['title']}} ">
                                         </a>
-                                      </h3>
-                                      <div class="post-contents"> استطاع اليورو التعافي بشكل ملحوظ خلال تداولات اليوم
-                                        الثلاثاء ولليوم الثاني على التوالي ليسجل أعلى مستوياته منذ أسبوع تقريباً مقابل
-                                        الدولار، وذلك بعد البيانات ال</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%AA%D8%B9%D8%A7%D9%81%D9%8A-%D9%83%D8%A8%D9%8A%D8%B1-%D9%81%D9%8A-%D9%85%D8%B3%D8%AA%D9%88%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%82%D9%84%D8%B5-%D8%A7%D9%86%D9%83%D9%85%D8%A7%D8%B4-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D8%B1%D9%88"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
+                                        <span class="cat-links"><a href="/category/{{$category['cat_code']}}"
+                                            class="cat-30" rel="category tag">{{$category['name']}}</a></span>
+                                      </div>
+                                      <div class="related-content-wrapper">
+                                        <div class="post-meta">
+                                          <span class="comments"><i class="fa fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
+                                          <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                          <span class="posted-on"><i class="fas fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
+                                          <h3 class="small-font">
+                                            <a
+                                              href="/{{$catPost['slug']}}">{{$catPost['title']}}
+                                            </a>
+                                          </h3>
+                                          <div class="post-contents text">{{$catPost['excerpt']}}</div>
+                                          <a href="/{{$catPost['slug']}}"
+                                            class="vmagazine-related-more">اقرأ المزيد</a>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="even">
-                              <td style="display: none" class="sorting_1">2020-06-22T12:47:32</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/584f1bc6-fa17-4e36-b5c6-9a229d08551a.jpg"
-                                        alt="الذهب كورونا" title="الذهب كورونا">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-22 , الساعه
-                                        12:47</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>54</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">
-                                          الذهب يقفز إلى الأعلى في شهر وسط تجدد مخاوف عدوى كورونا
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> ارتفعت أسعار الذهب إلى أعلى مستوى لها في شهر اليوم
-                                        الاثنين حيث أثار القلق بشأن الموجة الثانية من عدوى فيروس كورونا تعزيز الطلب على
-                                        الملاذ الآمن ليرتفع المعدن ال</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D9%82%D9%81%D8%B2-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89-%D9%81%D9%8A-%D8%B4%D9%87%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D8%AC%D8%AF%D8%AF-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%B9%D8%AF%D9%88%D9%89-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td style="display: none" class="sorting_1">2020-06-18T15:28:43</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B2%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2%D9%8A">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/12ca6ea5-f1a1-4c62-8666-a44da883768b.jpg"
-                                        alt="المركزي البريطاني " title="المركزي البريطاني ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-18 , الساعه
-                                        15:28</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>54</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B2%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2%D9%8A">
-                                          المركزي البريطاني يثبت أسعار الفائدة ويزيد البرنامج التحفيزي
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> قرر البنك المركزي البريطاني اليوم تثبيت سياسته النقدية
-                                        دون تغيير ليوافق توقعات الأسواق، حيث قرر البنك الإبقاء على أسعار الفائدة ثابتة
-                                        دون تغيير عند 0.10% وذلك ب</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A-%D9%8A%D8%AB%D8%A8%D8%AA-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B2%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2%D9%8A"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="even">
-                              <td style="display: none" class="sorting_1">2020-06-18T13:04:44</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D8%B3%D9%8A%D9%88%D9%8A%D8%A9-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%88%D8%B3%D8%B7-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9-%D9%85%D9%86-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/1b77ebbb-27bd-4563-b65e-2e22965fc72e.jpg"
-                                        alt="الأسهم الأسيوية " title="الأسهم الأسيوية ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-18 , الساعه
-                                        13:04</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>57</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D8%B3%D9%8A%D9%88%D9%8A%D8%A9-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%88%D8%B3%D8%B7-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9-%D9%85%D9%86-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7">
-                                          الأسهم الأسيوية تتراجع وسط مخاوف الموجة الثانية من كورونا
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> تراجعت معظم الأسهم الآسيوية يوم الخميس، حيث أثر ارتفاع
-                                        حالات الإصابة بالفيروس التاجي الجديد في بعض الولايات الأمريكية وبكين على معنويات
-                                        المستثمرين، في حين أضافت</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D8%B3%D9%8A%D9%88%D9%8A%D8%A9-%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D9%88%D8%B3%D8%B7-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9-%D9%85%D9%86-%D9%83%D9%88%D8%B1%D9%88%D9%86%D8%A7"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td style="display: none" class="sorting_1">2020-06-16T13:43:41</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%AD%D8%B2%D9%85%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A5%D9%84%D9%89-1-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88%D9%84%D8%A7%D8%B1">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/62120853-d852-4dc4-8b50-28945957e88f.jpg"
-                                        alt="المركزي الياباني" title="المركزي الياباني">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-16 , الساعه
-                                        13:43</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>70</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%AD%D8%B2%D9%85%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A5%D9%84%D9%89-1-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88%D9%84%D8%A7%D8%B1">
-                                          المركزي الياباني يزيد من حزمة تحفيز الشركات إلى 1 تريليون دولار
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> أعلن البنك المركزي الياباني اليوم عن نتائج اجتماع
-                                        السياسة النقدية ليقرر الإبقاء على أسعار الفائدة ثابتة دون تغيير، لتظل منخفضة
-                                        بنسبة 0.1%، ليشير أن الاقتصاد سوف</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%D9%8A-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D9%86-%D8%AD%D8%B2%D9%85%D8%A9-%D8%AA%D8%AD%D9%81%D9%8A%D8%B2-%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A5%D9%84%D9%89-1-%D8%AA%D8%B1%D9%8A%D9%84%D9%8A%D9%88%D9%86-%D8%AF%D9%88%D9%84%D8%A7%D8%B1"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="even">
-                              <td style="display: none" class="sorting_1">2020-06-15T14:32:32</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D9%88%D8%AF-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1-%D9%85%D9%86-%D8%AC%D8%AF%D9%8A%D8%AF">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/4dd640e8-2f2d-4c2d-b98b-c058034e6a9f.jpg"
-                                        alt="مؤشرات الأسهم الأوروبية " title="مؤشرات الأسهم الأوروبية ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-15 , الساعه
-                                        14:32</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>55</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D9%88%D8%AF-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1-%D9%85%D9%86-%D8%AC%D8%AF%D9%8A%D8%AF">
-                                          مؤشرات الأسهم الأوروبية تعود إلى اللون الأحمر من جديد
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> من جديد عادت مؤشرات الأسهم الأوروبية إلى الانخفاض
-                                        لتسيطر على التداولات اليوم الاثنين اللون الأحمر مسجلة خسائر تتعدى 1%، وذلك بعد
-                                        تجدد المخاوف من الموجة الثانية </div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B9%D9%88%D8%AF-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1-%D9%85%D9%86-%D8%AC%D8%AF%D9%8A%D8%AF"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td style="display: none" class="sorting_1">2020-06-11T14:55:14</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D9%8A%D9%8F%D8%B5%D9%8A%D8%A8%D9%87%D8%A7-%D8%A7%D9%84%D8%AA%D8%B4%D8%A7%D8%A4%D9%85-%D9%88%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/35031aa9-25fa-41f9-b97e-a6f70668f1cb.jpg"
-                                        alt="الأسهم الأوروبية " title="الأسهم الأوروبية ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-11 , الساعه
-                                        14:55</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>59</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D9%8A%D9%8F%D8%B5%D9%8A%D8%A8%D9%87%D8%A7-%D8%A7%D9%84%D8%AA%D8%B4%D8%A7%D8%A4%D9%85-%D9%88%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-">
-                                          الأسهم الأوروبية يُصيبها التشاؤم وتتراجع بعد توقعات الفيدرالي
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> استهلت مؤشرات الأسهم الأوروبية جلسة اليوم على تراجع
-                                        قوي وحافظت عليه حتى الآن، حيث دفع التقييم المحبط الذي أعلنه البنك الاحتياطي
-                                        الفيدرالي الأمريكي مساء أمس المس</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A3%D8%B3%D9%87%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D9%8A%D9%8F%D8%B5%D9%8A%D8%A8%D9%87%D8%A7-%D8%A7%D9%84%D8%AA%D8%B4%D8%A7%D8%A4%D9%85-%D9%88%D8%AA%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="even">
-                              <td style="display: none" class="sorting_1">2020-06-10T22:33:45</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-%D9%8A%D8%A8%D9%82%D9%8A-%D8%B9%D9%84%D9%89-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B3%D8%AA%D9%85%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/3f6afd62-8334-40ef-9f00-4541ae879eb2.jpg"
-                                        alt="الاحتياطي الفيدرالي " title="الاحتياطي الفيدرالي ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-10 , الساعه
-                                        22:33</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>112</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-%D9%8A%D8%A8%D9%82%D9%8A-%D8%B9%D9%84%D9%89-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B3%D8%AA%D9%85%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2">
-                                          الاحتياطي الفيدرالي يبقي على أسعار الفائدة ويستمر في التحفيز
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> أعلن البنك الاحتياطي الفيدرالي اليوم على الإبقاء على
-                                        أسعار الفائدة بأقل من المستوى 0.25% ليوافق بذلك توقعات الأسواق المالية، ليؤكد
-                                        التزامه باستخدام كافة الأدوات</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%8A%D8%A7%D8%B7%D9%8A-%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D8%B1%D8%A7%D9%84%D9%8A-%D9%8A%D8%A8%D9%82%D9%8A-%D8%B9%D9%84%D9%89-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%AF%D8%A9-%D9%88%D9%8A%D8%B3%D8%AA%D9%85%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D9%8A%D8%B2"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="odd">
-                              <td style="display: none" class="sorting_1">2020-06-09T17:49:25</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D8%B1%D8%AA%D9%81%D8%B9-%D8%B9%D9%84%D9%89-%D8%A7%D8%B3%D8%AA%D8%AD%D9%8A%D8%A7%D8%A1-%D8%A8%D8%B9%D8%AF-%D8%B9%D9%88%D8%AF%D8%A9-%D8%AB%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86-">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/5268ea58-da3a-4b12-a6fe-31495342d351.jpg"
-                                        alt="الذهب" title="الذهب">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-09 , الساعه
-                                        17:49</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>78</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D8%B1%D8%AA%D9%81%D8%B9-%D8%B9%D9%84%D9%89-%D8%A7%D8%B3%D8%AA%D8%AD%D9%8A%D8%A7%D8%A1-%D8%A8%D8%B9%D8%AF-%D8%B9%D9%88%D8%AF%D8%A9-%D8%AB%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86-">
-                                          الذهب يرتفع على استحياء بعد عودة ثقة المستثمرين
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> استكمل الذهب رحلته نحو الارتفاع اليوم أيضاً ولكن اتسمت
-                                        تداولاته بالهدوء النسبي بعد إعادة ثقة المستثمرين في الأسواق بافتراض اتجاه
-                                        الاقتصاديات نحو الخروج القريب م</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D9%8A%D8%B1%D8%AA%D9%81%D8%B9-%D8%B9%D9%84%D9%89-%D8%A7%D8%B3%D8%AA%D8%AD%D9%8A%D8%A7%D8%A1-%D8%A8%D8%B9%D8%AF-%D8%B9%D9%88%D8%AF%D8%A9-%D8%AB%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86-"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr role="row" class="even">
-                              <td style="display: none" class="sorting_1">2020-06-08T16:12:49</td>
-                              <td>
-                                <div class="single-post">
-                                  <div class="post-thumb">
-                                    <a
-                                      href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D8%A7%D9%84%D8%AE%D8%A7%D9%85-%D9%8A%D8%AA%D8%A8%D8%A7%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%81%D9%8A%D8%A9-%D8%AA%D9%85%D8%AF%D9%8A%D8%AF-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%AE%D9%81%D9%8A%D8%B6-%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%A7%D8%AC">
-                                      <img
-                                        src="./OFEED _ التحليل الأساسي_files/ac4a5656-e867-4a7b-8f0b-bf4fb9ce5bf7.png"
-                                        alt="النفط الخام " title="النفط الخام ">
-                                    </a>
-                                    <span class="cat-links"><a href="https://www.ofeed.com/Catnew?Catagory=FC"
-                                        class="cat-30" rel="category tag">التحليل الأساسي</a></span>
-                                  </div>
-                                  <div class="related-content-wrapper">
-                                    <div class="post-meta">
-                                      <span class="posted-on"><i class="fas fa-clock"></i>التاريخ : 2020-06-08 , الساعه
-                                        16:12</span>
-                                      <span class="comments"><i class="fa fa-thumbs-up"></i>0</span>
-                                      <span class="post-view"><i class="fa fa-eye"></i>127</span>
-                                      <h3 class="small-font">
-                                        <a
-                                          href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D8%A7%D9%84%D8%AE%D8%A7%D9%85-%D9%8A%D8%AA%D8%A8%D8%A7%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%81%D9%8A%D8%A9-%D8%AA%D9%85%D8%AF%D9%8A%D8%AF-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%AE%D9%81%D9%8A%D8%B6-%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%A7%D8%AC">
-                                          النفط الخام يتباين على خلفية تمديد اتفاق تخفيض الانتاج
-                                        </a>
-                                      </h3>
-                                      <div class="post-contents"> شهدت العقود الآجلة للنفط الخام تباين في اداءها اليوم
-                                        بعد أن اتفق كبار المنتجين على تمديد اتفاق بشأن تخفيضات الانتاج حتى نهاية شهر
-                                        يوليو القادم في الوقت الذي ارت</div>
-                                      <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%AA%D8%AD%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A/%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D8%A7%D9%84%D8%AE%D8%A7%D9%85-%D9%8A%D8%AA%D8%A8%D8%A7%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D8%AE%D9%84%D9%81%D9%8A%D8%A9-%D8%AA%D9%85%D8%AF%D9%8A%D8%AF-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%AA%D8%AE%D9%81%D9%8A%D8%B6-%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%A7%D8%AC"
-                                        class="vmagazine-related-more">اقرأ المزيد</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
+                                  </td>
+                                </tr>
+                              @endforeach
+                            @endif
                           </tbody>
                         </table>
                       </div>
                     </div>
+                    
                     <div class="row">
                       <div class="col-sm-12 col-md-5 ofeedAM">
                         <div class="dataTables_info" id="zero-configuration_info" role="status" aria-live="polite"> (1 ~
@@ -485,7 +170,7 @@
               data-index="6" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
               <div class="vmagazine-medium-rectangle-ad medium-rectangle-wrapper">
                 <a href="https://www.ofeed.com/price_plansar" target="_blank">
-                  <img class="lazy" src="./OFEED _ التحليل الأساسي_files/3a.png" alt="ofeed" title="ofeed">
+                  <img class="lazy" src="/images/3a.png" alt="ofeed" title="ofeed">
                   <p>أعلان</p>
                 </a>
               </div>

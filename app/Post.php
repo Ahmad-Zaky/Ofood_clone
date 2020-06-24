@@ -24,6 +24,8 @@ class Post extends Model
     protected $_TRUE = 1;
     protected $_FALES = 0;
     
+    
+
     /**
      * Get the category of the post.
      */

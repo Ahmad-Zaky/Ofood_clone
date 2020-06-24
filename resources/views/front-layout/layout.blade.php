@@ -177,9 +177,9 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/frontend.js"></script>
-  <script type="text/javascript" src="js/frontend1.js"></script>
-  <script type="text/javascript" src="js/jquery.blockUI.min.js">
+  <script type="text/javascript" src="/js/frontend.js"></script>
+  <script type="text/javascript" src="/js/frontend1.js"></script>
+  <script type="text/javascript" src="/js/jquery.blockUI.min.js">
   </script>
   <script type="text/javascript">
   /* <![CDATA[ */
@@ -193,9 +193,9 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/add-to-cart.min.js">
+  <script type="text/javascript" src="/js/add-to-cart.min.js">
   </script>
-  <script type="text/javascript" src="js/js.cookie.min.js"></script>
+  <script type="text/javascript" src="/js/js.cookie.min.js"></script>
   <script type="text/javascript">
   /* <![CDATA[ */
 
@@ -207,18 +207,18 @@
 
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/woocommerce.min.js"></script>
-  <script type="text/javascript" src="js/jquery.lazy.min.js"></script>
-  <script type="text/javascript" src="js/jquery.mCustomScrollbar2.js"></script>
-  <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-  <script type="text/javascript" src="js/navigation.js"></script>
-  <script type="text/javascript" src="js/skip-link-focus-fix.js"></script>
-  <script type="text/javascript" src="js/lightslider.js"></script>
-  <script type="text/javascript" src="js/wow.js"></script>
-  <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-  <script type="text/javascript" src="js/iframe-api.js"></script>
-  <script type="text/javascript" src="js/theia-sticky-sidebar.js"></script>
-  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/woocommerce.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.lazy.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.mCustomScrollbar2.js"></script>
+  <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/js/navigation.js"></script>
+  <script type="text/javascript" src="/js/skip-link-focus-fix.js"></script>
+  <script type="text/javascript" src="/js/lightslider.js"></script>
+  <script type="text/javascript" src="/js/wow.js"></script>
+  <script type="text/javascript" src="/js/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="/js/iframe-api.js"></script>
+  <script type="text/javascript" src="/js/theia-sticky-sidebar.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
   <script type="text/javascript">
   /* <![CDATA[ */
   var vmagazine_ajax_script = {
@@ -235,7 +235,7 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/vmagazine-custom.js">
+  <script type="text/javascript" src="/js/vmagazine-custom.js">
   </script>
   <script type="text/javascript">
   /* <![CDATA[ */
@@ -250,8 +250,8 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/validate.js"></script>
-  <script type="text/javascript" src="js/wp-embed.min.js"></script>
+  <script type="text/javascript" src="/js/validate.js"></script>
+  <script type="text/javascript" src="/js/wp-embed.min.js"></script>
   <script type="text/javascript">
   /* <![CDATA[ */
   var panelsStyles = {
@@ -259,15 +259,18 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/styling-2102.min.js">
+  <script type="text/javascript" src="/js/styling-2102.min.js">
   </script>
   <script type="text/javascript">
   document.body.className = document.body.className.replace("siteorigin-panels-before-js", "");
   </script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/RYPP.js"></script>
-  <script type="text/javascript" src="js/datatables.min.js"> </script>
-  <script type="text/javascript" src="js/tbl-datatable-custom.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/RYPP.js"></script>
+  <script type="text/javascript" src="/js/datatables.min.js"> </script>
+  <script type="text/javascript" src="/js/tbl-datatable-custom.js"></script>
+  <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
 
 </body>
 

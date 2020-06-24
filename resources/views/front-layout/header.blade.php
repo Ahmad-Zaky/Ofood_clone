@@ -119,7 +119,7 @@
           <div class="vmagazine-container">
             <div class="site-branding">
               <a href="https://www.ofeed.com/" class="custom-logo-link" rel="home" itemprop="url">
-                <img width="234" height="77" src="images/logo.png"
+                <img width="234" height="77" src="/images/logo.png"
                   class="custom-logo" alt="Vmagazine"></a>
               <div class="site-title-wrapper">
                 <h2 class="site-title"><a href="https://www.ofeed.com/" rel="home">OFEED | Financial &amp; Economic
@@ -131,7 +131,7 @@
               <div id="vmagazine_medium_ad-2" class="widget vmagazine_medium_ad">
                 <div class="vmagazine-medium-rectangle-ad medium-rectangle-wrapper">
                   <a href="https://www.fxgate.com/" target="_blank" rel="noreferrer">
-                    <img class="lazy" src="images/Ad_ar.png" alt="fxgate"
+                    <img class="lazy" src="/images/Ad_ar.png" alt="fxgate"
                       title="fxgate">
                   </a>
                 </div>
@@ -152,23 +152,23 @@
                   <ul id="menu-primary-menu" class="menu vmagazine_mega_menu">
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-724 no-mega-menu">
-                      <a href="https://www.ofeed.com/"><i class="fa fa-home"> </i> الرئيسية</a></li>
+                      <a href="{{asset('/')}}"><i class="fa fa-home"> </i> الرئيسية</a></li>
                     <li
                       class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children page_item page-item-114 no-mega-menu">
                       <a class="sub-toggle" style="width:100%">تحليلات وأخبار</a>
                       <ul class="sub-menu">
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-109 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=TA">التحليل الفني</a></li>
+                          <a href="/category/ta">التحليل الفني</a></li>
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-111 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=FC">التحليل الأساسي</a></li>
+                          <a href="/category/fc">التحليل الأساسي</a></li>
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-112 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=FN">اخبار العملات</a></li>
+                          <a href="/category/fn">اخبار العملات</a></li>
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-113 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=FG">جراف العملات</a></li>
+                          <a href="/category/fg">جراف العملات</a></li>
                       </ul>
                     </li>
                     <li
@@ -177,7 +177,7 @@
                       <ul class="sub-menu">
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-109 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=IG">انفوجرافيك</a></li>
+                          <a href="/category/ig">انفوجرافيك</a></li>
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-111 no-mega-menu">
                           <a
@@ -187,20 +187,20 @@
                     </li>
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-724 no-mega-menu">
-                      <a href="https://www.ofeed.com/Catnew?Catagory=LF">القسم التعليمي</a></li>
+                      <a href="/category/lf">القسم التعليمي</a></li>
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-724 no-mega-menu">
-                      <a href="https://www.ofeed.com/Catnew?Catagory=CC">العملات الرقمية</a></li>
+                      <a href="/category/cc">العملات الرقمية</a></li>
                     <li
                       class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children page_item page-item-114 no-mega-menu">
                       <a class="sub-toggle" style="width:100%">الأسواق العربية</a>
                       <ul class="sub-menu">
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-109 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=SS">السوق السعودي</a></li>
+                          <a href="/category/ss">السوق السعودي</a></li>
                         <li
                           class="menu-item menu-item-type-taxonomy menu-item-object-category page_item page-item-111 no-mega-menu">
-                          <a href="https://www.ofeed.com/Catnew?Catagory=ES">السوق المصري</a></li>
+                          <a href="/category/es">السوق المصري</a></li>
                       </ul>
                     </li>
                     <li

@@ -8,8 +8,8 @@
 
   <link rel="icon" href="https://www.ofeed.com/img/HeaderIcon.png" type="image/png" sizes="16x16">
   <script type="text/javascript" id="www-widgetapi-script"
-    src="js/www-widgetapi.js" async=""></script>
-  <script type="text/javascript" async="" src="js/analytics.js">
+    src="/js/www-widgetapi.js" async=""></script>
+  <script type="text/javascript" async="" src="/js/analytics.js">
   </script>
   <script type="text/javascript">
   window._wpemojiSettings = {
@@ -72,7 +72,7 @@
   }(window, document, window._wpemojiSettings);
   </script>
 
-  <script async="" src="css/js" type="text/javascript"></script>
+  <script async="" src="/css/js" type="text/javascript"></script>
   <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
 
@@ -83,68 +83,68 @@
 
   gtag('config', 'UA-126810459-1');
   </script>
-  <link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css"
+  <link rel="stylesheet" id="wp-block-library-css" href="/css/style.min.css"
     type="text/css">
 
-  <link rel="stylesheet" href="css/fontawesome-all.min.css">
-  <link rel="stylesheet" id="apss-font-opensans-css" href="css/css.css"
+  <link rel="stylesheet" href="/css/fontawesome-all.min.css">
+  <link rel="stylesheet" id="apss-font-opensans-css" href="/css/css.css"
     type="text/css">
-  <link rel="stylesheet" id="apss-frontend-css-css" href="css/frontend.css"
+  <link rel="stylesheet" id="apss-frontend-css-css" href="/css/frontend.css"
     type="text/css">
-  <link rel="stylesheet" id="apsc-googlefont-roboto-css" href="css/css1.css"
+  <link rel="stylesheet" id="apsc-googlefont-roboto-css" href="/css/css1.css"
     type="text/css">
-  <link rel="stylesheet" id="apsc-frontend-css-css" href="css/frontend1.css"
+  <link rel="stylesheet" id="apsc-frontend-css-css" href="/css/frontend1.css"
     type="text/css">
   <link rel="stylesheet" id="siteorigin-panels-front-css"
-    href="css/front-flex.min.css" type="text/css">
+    href="/css/front-flex.min.css" type="text/css">
   <link rel="stylesheet" id="vmagazine-shortcodes-front-css"
-    href="css/shortcodes.css" type="text/css">
+    href="/css/shortcodes.css" type="text/css">
   <link rel="stylesheet" id="woocommerce-layout-css"
-    href="css/woocommerce-layout.css" type="text/css">
+    href="/css/woocommerce-layout.css" type="text/css">
   <link rel="stylesheet" id="woocommerce-smallscreen-css"
-    href="css/woocommerce-smallscreen.css" type="text/css"
+    href="/css/woocommerce-smallscreen.css" type="text/css"
     media="only screen and (max-width: 768px)">
   <link rel="stylesheet" id="woocommerce-general-css"
-    href="css/woocommerce.css" type="text/css">
+    href="/css/woocommerce.css" type="text/css">
   <link rel="stylesheet" id="wpcui-frontend_assets_styles-css"
-    href="css/wpcui-frontend-style.css" type="text/css">
+    href="/css/wpcui-frontend-style.css" type="text/css">
   <link rel="stylesheet" id="wpcui_frontend_genericon_style-css"
-    href="css/genericons.css" type="text/css">
-  <link rel="stylesheet" id="dashicons-css" href="css/dashicons.min.css"
+    href="/css/genericons.css" type="text/css">
+  <link rel="stylesheet" id="dashicons-css" href="/css/dashicons.min.css"
     type="text/css">
-  <link rel="stylesheet" id="wpcui-linearicon-css" href="css/linearicons.css"
+  <link rel="stylesheet" id="wpcui-linearicon-css" href="/css/linearicons.css"
     type="text/css">
   <link rel="stylesheet" id="wpcui-rtl-styles-css"
-    href="css/wpcui_rtl_styles.css" type="text/css">
-  <link rel="stylesheet" id="wpcui_font_families-css" href="css/css2.css"
+    href="/css/wpcui_rtl_styles.css" type="text/css">
+  <link rel="stylesheet" id="wpcui_font_families-css" href="/css/css2.css"
     type="text/css">
   <link rel="stylesheet" id="wpcui_mCustomScroller_styles-css"
-    href="css/jquery.mCustomScrollbar.css" type="text/css">
-  <link rel="stylesheet" id="vmagazine-google-fonts-css" href="css/css3.css"
+    href="/css/jquery.mCustomScrollbar.css" type="text/css">
+  <link rel="stylesheet" id="vmagazine-google-fonts-css" href="/css/css3.css"
     type="text/css">
   <link rel="stylesheet" id="scrollbar-style-css"
-    href="css/jquery.mCustomScrollbar.min.css" type="text/css">
-  <link rel="stylesheet" id="lightslider-style-css" href="css/lightslider.css"
+    href="/css/jquery.mCustomScrollbar.min.css" type="text/css">
+  <link rel="stylesheet" id="lightslider-style-css" href="/css/lightslider.css"
     type="text/css">
-  <link rel="stylesheet" id="animate-css-css" href="css/animate.css"
+  <link rel="stylesheet" id="animate-css-css" href="/css/animate.css"
     type="text/css">
-  <link rel="stylesheet" id="prettyPhoto-style-css" href="css/prettyPhoto.css"
+  <link rel="stylesheet" id="prettyPhoto-style-css" href="/css/prettyPhoto.css"
     type="text/css">
-  <link rel="stylesheet" id="slick-style-css" href="css/slick.css"
+  <link rel="stylesheet" id="slick-style-css" href="/css/slick.css"
     type="text/css">
   <link rel="stylesheet" id="slick-style1-css" href="css/slick-theme.css"
     type="text/css">
-  <link rel="stylesheet" id="vmagazine-style-css" href="css/style.css"
+  <link rel="stylesheet" id="vmagazine-style-css" href="/css/style.css"
     type="text/css">
   <link rel="stylesheet" id="vmagazine-responsive-css"
-    href="css/responsive.css" type="text/css">
+    href="/css/responsive.css" type="text/css">
   <link rel="stylesheet" id="vmagazine-typhography-font-css"
-    href="css/css.css" type="text/css">
-  <link rel="stylesheet" id="newsletter-css" href="css/style2.css"
+    href="/css/css.css" type="text/css">
+  <link rel="stylesheet" id="newsletter-css" href="/css/style2.css"
     type="text/css">
-  <link rel="stylesheet" href="css/datatables.min.css" type="text/css">
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/shortcodes-front.js">
+  <link rel="stylesheet" href="/css/datatables.min.css" type="text/css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/shortcodes-front.js">
   </script>
   <script type="text/javascript">
   /* <![CDATA[ */
@@ -153,11 +153,11 @@
   };
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/wpcui-frontend-script.js">
+  <script type="text/javascript" src="/js/wpcui-frontend-script.js">
   </script>
-  <script type="text/javascript" src="js/webfont.js"></script>
+  <script type="text/javascript" src="/js/webfont.js"></script>
   <script type="text/javascript"
-    src="js/jquery.mCustomScrollbar.js"></script>
+    src="/js/jquery.mCustomScrollbar.js"></script>
   <meta name="generator" content="WordPress 5.0.4">
   <meta name="generator" content="WooCommerce 3.5.3">
   <title>OFEED | Financial &amp; Economic Feed</title>
@@ -165,9 +165,9 @@
   <link rel="shortlink" href="https://www.ofeed.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.ofeed.com/">
   <meta name="description" content="Landing page template for creative dashboard">
-  <link rel="stylesheet" href="css/datatablesar.min.css" type="text/css">
+  <link rel="stylesheet" href="/css/datatablesar.min.css" type="text/css">
   <meta name="keywords" content="Landing page template">
-  <script src="js/jquery.mousewheel.min.js"></script>
+  <script src="/js/jquery.mousewheel.min.js"></script>
   <style>
   .theiaStickySidebar:after {
     content: "";

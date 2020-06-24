@@ -31,7 +31,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=SS" class="cat-53" rel="category tag"
+                                  <a href="/category/ss" class="cat-53" rel="category tag"
                                     tabindex="0">{{$posts[0]['category']['name']}}</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>{{$posts[0]['readableCreatedAt']}}</span>
@@ -40,7 +40,7 @@
                                 </div>
 
                                 <h3 class="extra-large-font">
-                                  <a href="https://www.ofeed.com/%D8%A7%D9%84%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A/%D8%A7%D9%84%D8%AF%D8%B1%D9%8A%D8%B3-%D9%8A%D8%AD%D9%82%D9%82-%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D9%86%D8%A7-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%88%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%A7%D9%86-%D9%86%D9%86%D8%B5%D8%AD-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D9%8A-"
+                                  <a href="/{{$posts[0]['slug']}}"
                                     tabindex="0">{{$posts[0]['title']}}
                                   </a>
                                 </h3>
@@ -62,7 +62,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=FG" class="cat-53" rel="category tag"
+                                  <a href="/category/fg" class="cat-53" rel="category tag"
                                     tabindex="-1">جراف العملات</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>4 hours ago</span>
@@ -88,7 +88,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=FC" class="cat-53" rel="category tag"
+                                  <a href="/category/fc" class="cat-53" rel="category tag"
                                     tabindex="-1">التحليل الأساسي</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>5 hours ago</span>
@@ -114,7 +114,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=CC" class="cat-53" rel="category tag"
+                                  <a href="/category/cc" class="cat-53" rel="category tag"
                                     tabindex="-1">العملات الرقمية</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
@@ -140,7 +140,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=FN" class="cat-53" rel="category tag"
+                                  <a href="/category/fn" class="cat-53" rel="category tag"
                                     tabindex="-1">اخبار العملات</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
@@ -167,7 +167,7 @@
 
                               <div class="post-content-wrapper clearfix">
                                 <span class="cat-links">
-                                  <a href="https://www.ofeed.com/Catnew?Catagory=ES" class="cat-53" rel="category tag"
+                                  <a href="/category/es" class="cat-53" rel="category tag"
                                     tabindex="-1">السوق المصري</a></span>
                                 <div class="post-meta clearfix">
                                   <span class="posted-on"><i class="far fa-clock"></i>1 days ago</span>
@@ -227,7 +227,7 @@
                                           <div class="post-caption-wrapper">
                                             <span class="posted-on"><i class="far fa-clock"></i>{{$post['readableCreatedAt']}}</span>
                                             <h2 class="large-font"><a
-                                                href="https://www.ofeed.com/Fundamental_Comment/{{$post['slug']}}"
+                                                href="/{{$post['slug']}}"
                                                 tabindex="0">{{$post['title']}}</a></h2>
                                           </div>
                                         </div>
@@ -237,21 +237,8 @@
                                 @endif
                                 <!-- ./Render the side bar posts dynamically -->
                              
-
-
-
-
-
-
-
-
                                 </div>
                               </div>
-
-
-
-
-
                             </div>
                             <div id="mCSB_1_scrollbar_vertical"
                               class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
@@ -309,7 +296,7 @@
                         <div class="single-post first clearfix">
                           <div class="post-thumb">
                             <a class="thumb-zoom"
-                              href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                              href="/{{$firstPost['slug']}}"
                               title="{{$firstPost['title']}}">
                               <img
                                 src="images/{{$firstPost['thumbnail']}}"
@@ -326,7 +313,7 @@
 
                             <h2 class="large-font">
                               <a
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                             </h2>
                           </div>
                         </div>
@@ -339,7 +326,7 @@
                                 <div class="content-wrapper">
                                   <h2 class="small-font">
                                     <a
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                      href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                   </h2>
                                 </div>
 
@@ -348,7 +335,7 @@
                           @endforeach
                         @endif
                         
-                        <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=TA">شاهد المزيد</a></span>
+                        <span class="view-all"><a href="/category/ta">شاهد المزيد</a></span>
                       </div>
 
                     </div>
@@ -397,7 +384,7 @@
                           <div class="single-post first clearfix">
                             <div class="post-thumb">
                               <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                href="/{{$firstPost['slug']}}"
                                 title="{{$firstPost['title']}} ">
                                 <img
                                   src="images/{{$firstPost['thumbnail']}}"
@@ -414,7 +401,7 @@
 
                               <h2 class="large-font">
                                 <a
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                  href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                               </h2>
                             </div>
 
@@ -427,7 +414,7 @@
                               <div class="content-wrapper">
                                 <h2 class="small-font">
                                   <a
-                                    href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                    href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                 </h2>
                               </div>
 
@@ -436,7 +423,7 @@
                           @endforeach
                         @endif  
 
-                        <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FC">شاهد المزيد</a></span>
+                        <span class="view-all"><a href="/category/fc">شاهد المزيد</a></span>
                       </div>
 
                     </div>
@@ -533,7 +520,7 @@
 
                                     <h3 class="small-font">
                                       <a
-                                        href="https://www.ofeed.com/Fundamental_Comment/{{$mostViewed[0]['slug']}}">{{$mostViewed[0]['title']}}</a>
+                                        href="/{{$mostViewed[0]['slug']}}">{{$mostViewed[0]['title']}}</a>
                                     </h3>
                                   </div>
 
@@ -771,7 +758,7 @@
                                   <div class="recent-posts-content wow fadeInUp"
                                     style="visibility: visible; animation-name: fadeInUp;">
                                     <div class="image-recent-post post-thumb">
-                                      <a href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      <a href="/{{$catPost['slug']}}"
                                         class="thumb-zoom">
                                         <img
                                           src="images/{{$catPost['thumbnail']}}"
@@ -781,7 +768,7 @@
                                     </div>
                                     <div class="recent-post-content">
                                       <a style=" font-size: 1rem !important; "
-                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                        href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                     </div>
                                   </div>
                                 @endif
@@ -790,7 +777,7 @@
                           @endif
                         @endforeach
                       @endif
-                      <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FN">شاهد المزيد</a></span>
+                      <span class="view-all"><a href="/category/fn">شاهد المزيد</a></span>
                     </div>
                   </div>
                 </div>
@@ -822,7 +809,7 @@
                           <div class="recent-posts-content wow fadeInUp"
                             style="visibility: visible; animation-name: fadeInUp;">
                             <div class="image-recent-post post-thumb">
-                              <a href="https://www.ofeed.com/{{$catPost['slug']}}"
+                              <a href="/{{$catPost['slug']}}"
                                 class="thumb-zoom">
                                 <img
                                   src="images/{{$catPost['thumbnail']}}"
@@ -832,7 +819,7 @@
                             </div>
                             <div class="recent-post-content">
                               <a style=" font-size: 1rem !important; "
-                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                             </div>
                           </div>
                           @endif
@@ -840,7 +827,7 @@
                       @endif
 
                       
-                      <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=CC">شاهد المزيد</a></span>
+                      <span class="view-all"><a href="/category/cc">شاهد المزيد</a></span>
                     </div>
                   </div>
                 </div>
@@ -1698,7 +1685,7 @@
                               <div class="single-post clearfix">
                                 <div class="post-thumb">
                                   <a class="thumb-zoom"
-                                    href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                    href="/{{$firstPost['slug']}}"
                                     title="{{$firstPost['title']}}">
                                     <img
                                       src="images/{{$firstPost['thumbnail']}}"
@@ -1718,7 +1705,7 @@
                                     </div>
                                     <h2 class="small-font">
                                       <a
-                                        href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                        href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                                     </h2>
                                   </div>
                                 </div>
@@ -1735,7 +1722,7 @@
                                 <div class="single-post clearfix">
                                   <div class="post-thumb">
                                     <a class="thumb-zoom"
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      href="/{{$catPost['slug']}}"
                                       title="{{$catPost['title']}}">
                                       <img
                                         src="images/{{$catPost['thumbnail']}}"
@@ -1753,7 +1740,7 @@
                                       </div>
                                       <h2 class="small-font">
                                         <a
-                                          href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                          href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                       </h2>
                                     </div>
                                   </div>
@@ -1764,7 +1751,7 @@
                             @endif
 
 
-                            <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=SS">شاهد
+                            <span class="view-all"><a href="/category/ss">شاهد
                                 المزيد</a></span>
                           </div>
                         </div>
@@ -1825,7 +1812,7 @@
                               style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                               <div class="post-thumb">
                                 <a class="thumb-zoom"
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  href="/{{$firstPost['slug']}}"
                                   title="{{$firstPost['title']}}">
                                   <img
                                     src="images/{{$firstPost['thumbnail']}}"
@@ -1843,7 +1830,7 @@
 
                                 <h2 class="large-font">
                                   <a
-                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                    href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                                 </h2>
                               </div>
 
@@ -1857,7 +1844,7 @@
                                   style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                                   <div class="post-thumb">
                                     <a class="thumb-zoom"
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      href="/{{$catPost['slug']}}"
                                       title="{{$catPost['title']}}">
                                       <img
                                         src="images/{{$catPost['thumbnail']}}"
@@ -1875,7 +1862,7 @@
 
                                     <h2 class="large-font">
                                       <a
-                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                        href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                     </h2>
                                   </div>
 
@@ -1885,7 +1872,7 @@
                           @endif
 
                         </div>
-                        <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FC">شاهد المزيد</a></span>
+                        <span class="view-all"><a href="/category/fc">شاهد المزيد</a></span>
                       </div>
 
                     </div>
@@ -1911,7 +1898,7 @@
                             $catPosts = null;
                             if(!$categories->isEmpty()) {
                               foreach($categories as $cat) {
-                                if($cat->name === 'انفوجرافيك') {
+                                if($cat->name === 'جراف العملات') {
                                   $category = $cat;
                                   if(!$category->posts->isEmpty()) {
                                     $firstPost = $category->posts[0];
@@ -1927,7 +1914,7 @@
                               style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                               <div class="post-thumb">
                                 <a class="thumb-zoom"
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  href="/{{$firstPost['slug']}}"
                                   title="{{$firstPost['title']}}">
                                   <img
                                     src="images/{{$firstPost['thumbnail']}}"
@@ -1945,7 +1932,7 @@
 
                                 <h2 class="large-font">
                                   <a
-                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                    href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                                 </h2>
                               </div>
 
@@ -1958,7 +1945,7 @@
                                   style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                                   <div class="post-thumb">
                                     <a class="thumb-zoom"
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      href="/{{$catPost['slug']}}"
                                       title="{{$catPost['title']}}">
                                       <img
                                         src="images/{{$catPost['thumbnail']}}"
@@ -1976,7 +1963,7 @@
 
                                     <h2 class="large-font">
                                       <a
-                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                        href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                     </h2>
                                   </div>
 
@@ -1986,7 +1973,7 @@
                           @endif
 
                         </div>
-                        <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FG">شاهد المزيد</a></span>
+                        <span class="view-all"><a href="/category/fg">شاهد المزيد</a></span>
                       </div>
 
                     </div>
@@ -2028,7 +2015,7 @@
                               style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                               <div class="post-thumb">
                                 <a class="thumb-zoom"
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  href="/{{$firstPost['slug']}}"
                                   title="{{$firstPost['title']}} ">
                                   <img
                                     src="images/{{$firstPost['thumbnail']}}"
@@ -2046,7 +2033,7 @@
 
                                 <h2 class="large-font">
                                   <a
-                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                    href="/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
                                 </h2>
                               </div>
 
@@ -2060,7 +2047,7 @@
                                   style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
                                   <div class="post-thumb">
                                     <a class="thumb-zoom"
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      href="/{{$catPost['slug']}}"
                                       title="{{$catPost['title']}}">
                                       <img
                                         src="images/{{$catPost['thumbnail']}}"
@@ -2078,7 +2065,7 @@
 
                                     <h2 class="large-font">
                                       <a
-                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                        href="/{{$catPost['slug']}}">{{$catPost['title']}}</a>
                                     </h2>
                                   </div>
 
@@ -2088,7 +2075,7 @@
                           @endif
 
                         </div>
-                        <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=LF">شاهد المزيد</a></span>
+                        <span class="view-all"><a href="/category/lf">شاهد المزيد</a></span>
                       </div>
 
                     </div>
