@@ -207,17 +207,22 @@
 
   /* ]]> */
   </script>
-  <script type="text/javascript" src="js/woocommerce.min.js"></script>
-  <script type="text/javascript" src="js/jquery.lazy.min.js"></script>
-  <script type="text/javascript" src="js/jquery.mCustomScrollbar2.js"></script>
-  <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="js/woocommerce.min.js">
+  </script>
+  <script type="text/javascript" src="js/jquery.lazy.min.js">
+  </script>
+  <script type="text/javascript" src="js/jquery.fitvids.js">
+  </script>
   <script type="text/javascript" src="js/navigation.js"></script>
-  <script type="text/javascript" src="js/skip-link-focus-fix.js"></script>
+  <script type="text/javascript" src="js/skip-link-focus-fix.js">
+  </script>
   <script type="text/javascript" src="js/lightslider.js"></script>
   <script type="text/javascript" src="js/wow.js"></script>
-  <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="js/jquery.prettyPhoto.js">
+  </script>
   <script type="text/javascript" src="js/iframe-api.js"></script>
-  <script type="text/javascript" src="js/theia-sticky-sidebar.js"></script>
+  <script type="text/javascript" src="js/theia-sticky-sidebar.js">
+  </script>
   <script type="text/javascript" src="js/slick.min.js"></script>
   <script type="text/javascript">
   /* <![CDATA[ */
@@ -266,8 +271,7 @@
   </script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/RYPP.js"></script>
-  <script type="text/javascript" src="js/datatables.min.js"> </script>
-  <script type="text/javascript" src="js/tbl-datatable-custom.js"></script>
+
 
 </body>
 

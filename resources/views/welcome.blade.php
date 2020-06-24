@@ -207,31 +207,34 @@
                                   style="opacity: 1; height: 672px; transform: translate3d(0px, 0px, 0px);">
                                   
                                   <!-- Render the side bar posts dynamically -->
+                                  
+                                @if(!$posts->isEmpty())
                                   @foreach($posts as $key => $post)
-                                  @if($key < 6)
-                                  <div class="single-post clearfix slick-slide slick-active" data-slick-index="{{$loop->index+1}}"
-                                    aria-hidden="false" tabindex="0" style="width: 356px;">
-                                    <div class="slider-nav-inner-wrapper">
-                                      <div class="post-thumb">
-                                        <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
-                                          <img src="images/{{$post['thumbnail']}}"
-                                            alt="{{$post['title']}}"
-                                            title="{{$post['title']}}"
-                                            class="mCS_img_loaded">
-                                          <div class="image-overlay"></div>
-                                        </a>
-                                      </div>
+                                    @if($key < 6)
+                                      <div class="single-post clearfix slick-slide slick-active" data-slick-index="{{$loop->index+1}}"
+                                        aria-hidden="false" tabindex="0" style="width: 356px;">
+                                        <div class="slider-nav-inner-wrapper">
+                                          <div class="post-thumb">
+                                            <a href="javascript:void(0)" class="thumb-zoom" rel="noreferrer" tabindex="0">
+                                              <img src="images/{{$post['thumbnail']}}"
+                                                alt="{{$post['title']}}"
+                                                title="{{$post['title']}}"
+                                                class="mCS_img_loaded">
+                                              <div class="image-overlay"></div>
+                                            </a>
+                                          </div>
 
-                                      <div class="post-caption-wrapper">
-                                        <span class="posted-on"><i class="far fa-clock"></i>{{$post['readableCreatedAt']}}</span>
-                                        <h2 class="large-font"><a
-                                            href="https://www.ofeed.com/Fundamental_Comment/{{$post['slug']}}"
-                                            tabindex="0">{{$post['title']}}</a></h2>
+                                          <div class="post-caption-wrapper">
+                                            <span class="posted-on"><i class="far fa-clock"></i>{{$post['readableCreatedAt']}}</span>
+                                            <h2 class="large-font"><a
+                                                href="https://www.ofeed.com/Fundamental_Comment/{{$post['slug']}}"
+                                                tabindex="0">{{$post['title']}}</a></h2>
+                                          </div>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </div>
+                                    @endif
+                                  @endforeach
                                 @endif
-                                @endforeach
                                 <!-- ./Render the side bar posts dynamically -->
                              
 
@@ -289,15 +292,20 @@
                           $category = null;
                           $firstPost = null;
                           $catPosts = null;
-                          foreach($categories as $cat) {
-                            if($cat->name === 'التحليل الفني') {
-                              $category = $cat;
-                              $firstPost = $category->posts[0];
-                              $catPosts = $category->posts;
+                          if(!$categories->isEmpty()) {
+                            foreach($categories as $cat) {
+                              if($cat->name === 'التحليل الفني') {
+                                $category = $cat;
+                                if(!$category->posts->isEmpty()) {
+                                  $firstPost = $category->posts[0];
+                                  $catPosts = $category->posts;
+                                }
+                              }
                             }
                           }
                         @endphp
-                        
+
+                        @if($firstPost)
                         <div class="single-post first clearfix">
                           <div class="post-thumb">
                             <a class="thumb-zoom"
@@ -322,23 +330,23 @@
                             </h2>
                           </div>
                         </div>
-
-
-                        @foreach($catPosts as $key => $catPost)
-                        @if($key > 0 && $key < 5)
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                            </h2>
-                          </div>
-
-                        </div>
                         @endif
-                        @endforeach
 
-                        
+                        @if($catPosts && !$catPosts->isEmpty())
+                          @foreach($catPosts as $key => $catPost)
+                            @if($key > 0 && $key < 5)
+                              <div class="single-post bottom-post clearfix">
+                                <div class="content-wrapper">
+                                  <h2 class="small-font">
+                                    <a
+                                      href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                  </h2>
+                                </div>
+
+                              </div>
+                            @endif
+                          @endforeach
+                        @endif
                         
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=TA">شاهد المزيد</a></span>
                       </div>
@@ -368,60 +376,65 @@
                         <div class="block-header clearfix">
                         </div>
                         
-                        
                         @php
                           $category = null;
                           $firstPost = null;
                           $catPosts = null;
-                          foreach($categories as $cat) {
-                            if($cat->name === 'التحليل الاساسي') {
-                              $category = $cat;
-                              $firstPost = $category->posts[0];
-                              $catPosts = $category->posts;
+                          if(!$categories->isEmpty()) {
+                            foreach($categories as $cat) {
+                              if($cat->name === 'التحليل الاساسي') {
+                                $category = $cat;
+                                if(!$category->posts->isEmpty()) {
+                                  $firstPost = $category->posts[0];
+                                  $catPosts = $category->posts;
+                                }
+                              }
                             }
                           }
                         @endphp
+                        
+                        @if($firstPost)
+                          <div class="single-post first clearfix">
+                            <div class="post-thumb">
+                              <a class="thumb-zoom"
+                                href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                title="{{$firstPost['title']}} ">
+                                <img
+                                  src="images/{{$firstPost['thumbnail']}}"
+                                  alt="{{$firstPost['title']}}" title="{{$firstPost['title']}} ">
+                                <div class="image-overlay"></div>
+                              </a>
+                            </div>
+                            <div class="content-wrapper">
+                              <div class="post-meta clearfix">
+                                <span class="post-view"><i class="far fa-eye"></i>{{$firstPost['views_count']}}</span>
+                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                                <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                              </div>
 
-
-                        <div class="single-post first clearfix">
-                          <div class="post-thumb">
-                            <a class="thumb-zoom"
-                              href="https://www.ofeed.com/{{$firstPost['slug']}}"
-                              title="{{$firstPost['title']}} ">
-                              <img
-                                src="images/{{$firstPost['thumbnail']}}"
-                                alt="{{$firstPost['title']}}" title="{{$firstPost['title']}} ">
-                              <div class="image-overlay"></div>
-                            </a>
-                          </div>
-                          <div class="content-wrapper">
-                            <div class="post-meta clearfix">
-                              <span class="post-view"><i class="far fa-eye"></i>{{$firstPost['views_count']}}</span>
-                              <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
-                              <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                              <h2 class="large-font">
+                                <a
+                                  href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                              </h2>
                             </div>
 
-                            <h2 class="large-font">
-                              <a
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
-                            </h2>
                           </div>
-
-                        </div>
-                        @foreach($catPosts as $key => $catPost)
-                        @if($key > 0 && $key < 5)
-                        <div class="single-post bottom-post clearfix">
-                          <div class="content-wrapper">
-                            <h2 class="small-font">
-                              <a
-                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                            </h2>
-                          </div>
-
-                        </div>
                         @endif
-                        @endforeach
-                      
+                        @if($catPosts && !$catPosts->isEmpty())
+                          @foreach($catPosts as $key => $catPost)
+                            @if($key > 0 && $key < 5)
+                            <div class="single-post bottom-post clearfix">
+                              <div class="content-wrapper">
+                                <h2 class="small-font">
+                                  <a
+                                    href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                </h2>
+                              </div>
+
+                            </div>
+                            @endif
+                          @endforeach
+                        @endif  
 
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FC">شاهد المزيد</a></span>
                       </div>
@@ -744,35 +757,39 @@
                   <div class="panel-widget-style panel-widget-style-for-38-1-2-4">
                     <h4 class="block-title"><span class="title-bg">اخبار العملات</span></h4>
                     <div class="vmagazine-rec-posts recent-post-widget block_layout_1">
-                      
+                      @if(!$categories->isEmpty())
                         @foreach($categories as $cat)
                           @if($cat->name === 'اخبار العملات')
                             @php
-                              $catPosts = $cat->posts; 
+                              if(!$cat->posts->isEmpty()) {
+                                $catPosts = $cat->posts; 
+                              }
                             @endphp
-                            @foreach($catPosts as $key => $catPost)
-                            @if($key < 3)
-                              <div class="recent-posts-content wow fadeInUp"
-                                style="visibility: visible; animation-name: fadeInUp;">
-                                <div class="image-recent-post post-thumb">
-                                  <a href="https://www.ofeed.com/{{$catPost['slug']}}"
-                                    class="thumb-zoom">
-                                    <img
-                                      src="images/{{$catPost['thumbnail']}}"
-                                      alt="{{$catPost['title']}} " title="{{$catPost['title']}}">
-                                    <div class="image-overlay"></div>
-                                  </a>
-                                </div>
-                                <div class="recent-post-content">
-                                  <a style=" font-size: 1rem !important; "
-                                    href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                                </div>
-                              </div>
+                            @if($catPosts && !$catPosts->isEmpty())
+                              @foreach($catPosts as $key => $catPost)
+                                @if($key < 3)
+                                  <div class="recent-posts-content wow fadeInUp"
+                                    style="visibility: visible; animation-name: fadeInUp;">
+                                    <div class="image-recent-post post-thumb">
+                                      <a href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                        class="thumb-zoom">
+                                        <img
+                                          src="images/{{$catPost['thumbnail']}}"
+                                          alt="{{$catPost['title']}} " title="{{$catPost['title']}}">
+                                        <div class="image-overlay"></div>
+                                      </a>
+                                    </div>
+                                    <div class="recent-post-content">
+                                      <a style=" font-size: 1rem !important; "
+                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                    </div>
+                                  </div>
+                                @endif
+                              @endforeach
                             @endif
-                            @endforeach
                           @endif
                         @endforeach
-                        
+                      @endif
                       <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FN">شاهد المزيد</a></span>
                     </div>
                   </div>
@@ -783,36 +800,44 @@
                     <h4 class="block-title"><span class="title-bg">العملات الرقمية</span></h4>
                     <div class="vmagazine-rec-posts recent-post-widget block_layout_1">
                       
+
                       @php
                         $category = null;
                         $catPosts = null;
-                        foreach($categories as $cat) {
-                          if($cat->name === 'العملات الرقمية') {
-                            $category = $cat;
-                            $catPosts = $category->posts;
+                        if(!$categories->isEmpty()) {
+                          foreach($categories as $cat) {
+                            if($cat->name === 'العملات الرقمية') {
+                              $category = $cat;
+                              if(!$category->posts->isEmpty()) {
+                                $catPosts = $category->posts;
+                              }
+                            }
                           }
                         }
                       @endphp
-                      @foreach($catPosts as $key => $catPost)
-                      @if($key < 3)
-                      <div class="recent-posts-content wow fadeInUp"
-                        style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="image-recent-post post-thumb">
-                          <a href="https://www.ofeed.com/{{$catPost['slug']}}"
-                            class="thumb-zoom">
-                            <img
-                              src="images/{{$catPost['thumbnail']}}"
-                              alt="{{$catPost['title']}} " title="{{$catPost['title']}} ">
-                            <div class="image-overlay"></div>
-                          </a>
-                        </div>
-                        <div class="recent-post-content">
-                          <a style=" font-size: 1rem !important; "
-                            href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                        </div>
-                      </div>
+                      
+                      @if($catPosts && !$catPosts->isEmpty())
+                        @foreach($catPosts as $key => $catPost)
+                          @if($key < 3)
+                          <div class="recent-posts-content wow fadeInUp"
+                            style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="image-recent-post post-thumb">
+                              <a href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                class="thumb-zoom">
+                                <img
+                                  src="images/{{$catPost['thumbnail']}}"
+                                  alt="{{$catPost['title']}} " title="{{$catPost['title']}} ">
+                                <div class="image-overlay"></div>
+                              </a>
+                            </div>
+                            <div class="recent-post-content">
+                              <a style=" font-size: 1rem !important; "
+                                href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                            </div>
+                          </div>
+                          @endif
+                        @endforeach
                       @endif
-                      @endforeach
 
                       
                       <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=CC">شاهد المزيد</a></span>
@@ -1654,82 +1679,89 @@
                             $category = null;
                             $firstPost = null;
                             $catPosts = null;
-                            foreach($categories as $cat) {
-                              if($cat->name === 'السوق السعودي') {
-                                $category = $cat;
-                                $firstPost = $category->posts[0];
-                                $catPosts = $category->posts;
+                            if(!$categories->isEmpty()) {
+                              foreach($categories as $cat) {
+                                if($cat->name === 'السوق السعودي') {
+                                  $category = $cat;
+                                  if(!$category->posts->isEmpty()) {
+                                    $firstPost = $category->posts[0];
+                                    $catPosts = $category->posts;
+                                  }
+                                }
                               }
                             }
                           @endphp
-
-                          <div class="left-post-wrapper wow fadeInDown" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInDown;">
-                            <div class="single-post clearfix">
-                              <div class="post-thumb">
-                                <a class="thumb-zoom"
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
-                                  title="{{$firstPost['title']}}">
-                                  <img
-                                    src="images/{{$firstPost['thumbnail']}}"
-                                    alt="{{$firstPost['title']}}"
+                         
+                          @if($firstPost)
+                            <div class="left-post-wrapper wow fadeInDown" data-wow-duration="0.7s"
+                              style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInDown;">
+                              <div class="single-post clearfix">
+                                <div class="post-thumb">
+                                  <a class="thumb-zoom"
+                                    href="https://www.ofeed.com/{{$firstPost['slug']}}"
                                     title="{{$firstPost['title']}}">
-                                  <div class="image-overlay"></div>
-                                </a>
-                                <span class="post-format-icon video-icon "><i class="icon_film"></i></span>
-                              </div>
-
-                              <div class="post-caption-wrapper">
-                                <div class="post-caption-inner">
-                                  <div class="post-meta clearfix">
-                                    <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
-                                    <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
-                                    <span class="posted-on"><i class="fa fa-clock-o"></i>{{explode(' ', $firstPost['created_at'])[0]}}</span>
-                                  </div>
-                                  <h2 class="small-font">
-                                    <a
-                                      href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
-                                  </h2>
+                                    <img
+                                      src="images/{{$firstPost['thumbnail']}}"
+                                      alt="{{$firstPost['title']}}"
+                                      title="{{$firstPost['title']}}">
+                                    <div class="image-overlay"></div>
+                                  </a>
+                                  <span class="post-format-icon video-icon "><i class="icon_film"></i></span>
                                 </div>
+
+                                <div class="post-caption-wrapper">
+                                  <div class="post-caption-inner">
+                                    <div class="post-meta clearfix">
+                                      <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                                      <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                                      <span class="posted-on"><i class="fa fa-clock-o"></i>{{explode(' ', $firstPost['created_at'])[0]}}</span>
+                                    </div>
+                                    <h2 class="small-font">
+                                      <a
+                                        href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                    </h2>
+                                  </div>
+                                </div>
+
                               </div>
 
                             </div>
-
-                          </div>
+                          @endif
                           <div class="right-posts-wrapper wow fadeInUp" data-wow-duration="0.7s"
                             style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            @foreach($catPosts as $key => $catPost)
-                            @if($key > 0 && $key < 5)
-                            <div class="single-post clearfix">
-                              <div class="post-thumb">
-                                <a class="thumb-zoom"
-                                  href="https://www.ofeed.com/{{$catPost['slug']}}"
-                                  title="{{$catPost['title']}}">
-                                  <img
-                                    src="images/{{$catPost['thumbnail']}}"
-                                    alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
-                                  <div class="image-overlay"></div>
-                                </a>
-                              </div>
-
-                              <div class="post-caption-wrapper">
-                                <div class="post-caption-inner">
-                                  <div class="post-meta clearfix">
-                                    <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
-                                    <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
-                                    <span class="posted-on"><i class="fa fa-clock-o"></i>{{explode(' ', $catPost['created_at'])[0]}}</span>
+                            @if($catPosts && !$catPosts->isEmpty())
+                              @foreach($catPosts as $key => $catPost)
+                                @if($key > 0 && $key < 5)
+                                <div class="single-post clearfix">
+                                  <div class="post-thumb">
+                                    <a class="thumb-zoom"
+                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      title="{{$catPost['title']}}">
+                                      <img
+                                        src="images/{{$catPost['thumbnail']}}"
+                                        alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
+                                      <div class="image-overlay"></div>
+                                    </a>
                                   </div>
-                                  <h2 class="small-font">
-                                    <a
-                                      href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                                  </h2>
-                                </div>
-                              </div>
 
-                            </div>
+                                  <div class="post-caption-wrapper">
+                                    <div class="post-caption-inner">
+                                      <div class="post-meta clearfix">
+                                        <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
+                                        <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                        <span class="posted-on"><i class="fa fa-clock-o"></i>{{explode(' ', $catPost['created_at'])[0]}}</span>
+                                      </div>
+                                      <h2 class="small-font">
+                                        <a
+                                          href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                      </h2>
+                                    </div>
+                                  </div>
+
+                                </div>
+                                @endif
+                              @endforeach
                             @endif
-                            @endforeach
-                            
 
 
                             <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=SS">شاهد
@@ -1776,72 +1808,81 @@
                             $category = null;
                             $firstPost = null;
                             $catPosts = null;
-                            foreach($categories as $cat) {
-                              if($cat->name === 'انفوجرافيك') {
-                                $category = $cat;
-                                $firstPost = $category->posts[0];
-                                $catPosts = $category->posts;
+                            if(!$categories->isEmpty()) {
+                              foreach($categories as $cat) {
+                                if($cat->name === 'انفوجرافيك') {
+                                  $category = $cat;
+                                  if(!$category->posts->isEmpty()) {
+                                    $firstPost = $category->posts[0];
+                                    $catPosts = $category->posts;
+                                  }
+                                }
                               }
                             }
                           @endphp
-                          <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}"
-                                title="{{$firstPost['title']}}">
-                                <img
-                                  src="images/{{$firstPost['thumbnail']}}"
-                                  alt="{{$firstPost['title']}}" title="{{$firstPost['title']}}">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
-
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                          @if($firstPost)
+                            <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
+                              style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                              <div class="post-thumb">
+                                <a class="thumb-zoom"
+                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  title="{{$firstPost['title']}}">
+                                  <img
+                                    src="images/{{$firstPost['thumbnail']}}"
+                                    alt="{{$firstPost['title']}}" title="{{$firstPost['title']}}">
+                                  <div class="image-overlay"></div>
+                                </a>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
-                              </h2>
-                            </div>
+                              <div class="post-content-wrapper clearfix">
+                                <div class="post-meta clearfix">
+                                  <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                                  <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                                  <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                                </div>
 
-                          </div>
-                          @foreach($catPosts as $key => $catPost)
-                          @if($key > 0 && $key < 3)
-                          <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$catPost['slug']}}"
-                                title="{{$catPost['title']}}">
-                                <img
-                                  src="images/{{$catPost['thumbnail']}}"
-                                  alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
-
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                <h2 class="large-font">
+                                  <a
+                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                </h2>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                              </h2>
                             </div>
-
-                          </div>
                           @endif
-                          @endforeach
+                          
+                          @if($catPosts && !$catPosts->isEmpty())
+                            @foreach($catPosts as $key => $catPost)
+                              @if($key > 0 && $key < 3)
+                                <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
+                                  style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                                  <div class="post-thumb">
+                                    <a class="thumb-zoom"
+                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      title="{{$catPost['title']}}">
+                                      <img
+                                        src="images/{{$catPost['thumbnail']}}"
+                                        alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
+                                      <div class="image-overlay"></div>
+                                    </a>
+                                  </div>
+
+                                  <div class="post-content-wrapper clearfix">
+                                    <div class="post-meta clearfix">
+                                      <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
+                                      <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
+                                      <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                    </div>
+
+                                    <h2 class="large-font">
+                                      <a
+                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                    </h2>
+                                  </div>
+
+                                </div>
+                              @endif
+                            @endforeach
+                          @endif
 
                         </div>
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FC">شاهد المزيد</a></span>
@@ -1868,74 +1909,81 @@
                             $category = null;
                             $firstPost = null;
                             $catPosts = null;
-                            foreach($categories as $cat) {
-                              if($cat->name === 'جراف العملات') {
-                                $category = $cat;
-                                $firstPost = $category->posts[0];
-                                $catPosts = $category->posts;
+                            if(!$categories->isEmpty()) {
+                              foreach($categories as $cat) {
+                                if($cat->name === 'انفوجرافيك') {
+                                  $category = $cat;
+                                  if(!$category->posts->isEmpty()) {
+                                    $firstPost = $category->posts[0];
+                                    $catPosts = $category->posts;
+                                  }
+                                }
                               }
                             }
                           @endphp
-                          
-                          <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}"
-                                title="{{$firstPost['title']}}">
-                                <img
-                                  src="images/{{$firstPost['thumbnail']}}"
-                                  alt="{{$firstPost['title']}}" title="{{$firstPost['title']}}">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
 
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                          @if($firstPost)
+                            <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
+                              style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                              <div class="post-thumb">
+                                <a class="thumb-zoom"
+                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  title="{{$firstPost['title']}}">
+                                  <img
+                                    src="images/{{$firstPost['thumbnail']}}"
+                                    alt="{{$firstPost['title']}}" title="{{$firstPost['title']}}">
+                                  <div class="image-overlay"></div>
+                                </a>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
-                              </h2>
-                            </div>
+                              <div class="post-content-wrapper clearfix">
+                                <div class="post-meta clearfix">
+                                  <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                                  <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                                  <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                                </div>
 
-                          </div>
-
-                          @foreach($catPosts as $key => $catPost)
-                          @if($key > 0 && $key < 3)
-                          <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$catPost['slug']}}"
-                                title="{{$catPost['title']}}">
-                                <img
-                                  src="images/{{$catPost['thumbnail']}}"
-                                  alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
-
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                <h2 class="large-font">
+                                  <a
+                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                </h2>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                              </h2>
                             </div>
-
-                          </div>
                           @endif
-                          @endforeach
+                          @if($catPosts && !$catPosts->isEmpty())
+                            @foreach($catPosts as $key => $catPost)
+                              @if($key > 0 && $key < 3)
+                                <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
+                                  style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                                  <div class="post-thumb">
+                                    <a class="thumb-zoom"
+                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      title="{{$catPost['title']}}">
+                                      <img
+                                        src="images/{{$catPost['thumbnail']}}"
+                                        alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
+                                      <div class="image-overlay"></div>
+                                    </a>
+                                  </div>
+
+                                  <div class="post-content-wrapper clearfix">
+                                    <div class="post-meta clearfix">
+                                      <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
+                                      <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
+                                      <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                    </div>
+
+                                    <h2 class="large-font">
+                                      <a
+                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                    </h2>
+                                  </div>
+
+                                </div>
+                              @endif
+                            @endforeach
+                          @endif
 
                         </div>
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=FG">شاهد المزيد</a></span>
@@ -1962,73 +2010,82 @@
                             $category = null;
                             $firstPost = null;
                             $catPosts = null;
-                            foreach($categories as $cat) {
-                              if($cat->name === 'القسم التعليمي') {
-                                $category = $cat;
-                                $firstPost = $category->posts[0];
-                                $catPosts = $category->posts;
+                            if(!$categories->isEmpty()) {
+                              foreach($categories as $cat) {
+                                if($cat->name === 'القسم التعليمي') {
+                                  $category = $cat;
+                                  if(!$category->posts->isEmpty()) {
+                                    $firstPost = $category->posts[0];
+                                    $catPosts = $category->posts;
+                                  }
+                                }
                               }
                             }
                           @endphp
-                          <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$firstPost['slug']}}"
-                                title="{{$firstPost['title']}} ">
-                                <img
-                                  src="images/{{$firstPost['thumbnail']}}"
-                                  alt="{{$firstPost['title']}} " title="{{$firstPost['title']}} ">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
 
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                          @if($firstPost)
+                            <div class="single-post first-post clearfix wow fadeInUp" data-wow-duration="0.7s"
+                              style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                              <div class="post-thumb">
+                                <a class="thumb-zoom"
+                                  href="https://www.ofeed.com/{{$firstPost['slug']}}"
+                                  title="{{$firstPost['title']}} ">
+                                  <img
+                                    src="images/{{$firstPost['thumbnail']}}"
+                                    alt="{{$firstPost['title']}} " title="{{$firstPost['title']}} ">
+                                  <div class="image-overlay"></div>
+                                </a>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
-                              </h2>
-                            </div>
+                              <div class="post-content-wrapper clearfix">
+                                <div class="post-meta clearfix">
+                                  <span class="posted-on"><i class="far fa-clock"></i>{{$firstPost['readableCreatedAt']}}</span>
+                                  <span class="comments"><i class="far fa-thumbs-up"></i>{{$firstPost['likes_count']}}</span>
+                                  <span class="post-view"><i class="fa fa-eye"></i>{{$firstPost['views_count']}}</span>
+                                </div>
 
-                          </div>
-
-                          @foreach($catPosts as $key => $catPost)
-                          @if($key > 0 && $key < 3)
-                          <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
-                            style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
-                            <div class="post-thumb">
-                              <a class="thumb-zoom"
-                                href="https://www.ofeed.com/{{$catPost['slug']}}"
-                                title="{{$catPost['title']}}">
-                                <img
-                                  src="images/{{$catPost['thumbnail']}}"
-                                  alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
-                                <div class="image-overlay"></div>
-                              </a>
-                            </div>
-
-                            <div class="post-content-wrapper clearfix">
-                              <div class="post-meta clearfix">
-                                <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
-                                <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
-                                <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                <h2 class="large-font">
+                                  <a
+                                    href="https://www.ofeed.com/{{$firstPost['slug']}}">{{$firstPost['title']}}</a>
+                                </h2>
                               </div>
 
-                              <h2 class="large-font">
-                                <a
-                                  href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
-                              </h2>
                             </div>
-
-                          </div>
                           @endif
-                          @endforeach
+                          
+                          @if($catPosts && !$catPosts->isEmpty())
+                            @foreach($catPosts as $key => $catPost)
+                              @if($key > 0 && $key < 3)
+                                <div class="single-post  clearfix wow fadeInUp" data-wow-duration="0.7s"
+                                  style="visibility: visible; animation-duration: 0.7s; animation-name: fadeInUp;">
+                                  <div class="post-thumb">
+                                    <a class="thumb-zoom"
+                                      href="https://www.ofeed.com/{{$catPost['slug']}}"
+                                      title="{{$catPost['title']}}">
+                                      <img
+                                        src="images/{{$catPost['thumbnail']}}"
+                                        alt="{{$catPost['title']}}" title="{{$catPost['title']}}">
+                                      <div class="image-overlay"></div>
+                                    </a>
+                                  </div>
+
+                                  <div class="post-content-wrapper clearfix">
+                                    <div class="post-meta clearfix">
+                                      <span class="posted-on"><i class="far fa-clock"></i>{{$catPost['readableCreatedAt']}}</span>
+                                      <span class="comments"><i class="far fa-thumbs-up"></i>{{$catPost['likes_count']}}</span>
+                                      <span class="post-view"><i class="fa fa-eye"></i>{{$catPost['views_count']}}</span>
+                                    </div>
+
+                                    <h2 class="large-font">
+                                      <a
+                                        href="https://www.ofeed.com/{{$catPost['slug']}}">{{$catPost['title']}}</a>
+                                    </h2>
+                                  </div>
+
+                                </div>
+                              @endif
+                            @endforeach
+                          @endif
 
                         </div>
                         <span class="view-all"><a href="https://www.ofeed.com/Catnew?Catagory=LF">شاهد المزيد</a></span>

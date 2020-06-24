@@ -9,30 +9,31 @@
                   </span>
                 </h4>
                 <div class="vmagazine-rec-posts recent-post-widget block_layout_2">
-                  
-                  @foreach($posts as $key => $post)
-                  @if($key < 3)
-                  <div class="recent-posts-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                    <div class="image-recent-post post-thumb">
-                      <a href="https://www.ofeed.com/{{$post['slug']}}"
-                        class="thumb-zoom">
-                        <img class="lazy"
-                          src="images/{{$post['thumbnail']}}"
-                          alt="{{$post['title']}}" title="{{$post['title']}}">
-                        <div class="image-overlay"></div>
-                      </a>
-                    </div>
-                    <div class="recent-post-content">
-                      <a
-                        href="https://www.ofeed.com/{{$post['slug']}}">{{$post['title']}}
-                      </a>
-                      <div class="posted-date">
-                        <span class="posted-on"><i class="fa fa-clock-o"></i>{{$post['readableCreatedAt']}}</span>
-                      </div>
-                    </div>
-                  </div>
+                  @if(!$posts->isEmpty())
+                    @foreach($posts as $key => $post)
+                      @if($key < 3)
+                        <div class="recent-posts-content wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                          <div class="image-recent-post post-thumb">
+                            <a href="https://www.ofeed.com/{{$post['slug']}}"
+                              class="thumb-zoom">
+                              <img class="lazy"
+                                src="images/{{$post['thumbnail']}}"
+                                alt="{{$post['title']}}" title="{{$post['title']}}">
+                              <div class="image-overlay"></div>
+                            </a>
+                          </div>
+                          <div class="recent-post-content">
+                            <a
+                              href="https://www.ofeed.com/{{$post['slug']}}">{{$post['title']}}
+                            </a>
+                            <div class="posted-date">
+                              <span class="posted-on"><i class="fa fa-clock-o"></i>{{$post['readableCreatedAt']}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      @endif
+                    @endforeach
                   @endif
-                  @endforeach
                   
                 </div>
               </div>

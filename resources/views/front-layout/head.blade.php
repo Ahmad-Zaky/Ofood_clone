@@ -165,6 +165,7 @@
   <link rel="shortlink" href="https://www.ofeed.com/">
   <link rel="alternate" hreflang="x-default" href="https://www.ofeed.com/">
   <meta name="description" content="Landing page template for creative dashboard">
+  <link rel="stylesheet" href="css/datatablesar.min.css" type="text/css">
   <meta name="keywords" content="Landing page template">
   <script src="js/jquery.mousewheel.min.js"></script>
   <style>
